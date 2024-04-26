@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+//import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
 import { AdminRegistriesModule } from '../../app/admin/admin-registries/admin-registries.module';
 import { AdminSearchModule } from '../../app/admin/admin-search-page/admin-search.module';
@@ -160,6 +162,13 @@ import {UserMenuComponent} from './app/shared/auth-nav-menu/user-menu/user-menu.
 import { BrowseByComponent } from './app/shared/browse-by/browse-by.component';
 import { RegisterEmailFormComponent } from './app/register-email-form/register-email-form.component';
 
+// oriol orcid
+/*
+import {
+  ItemPageOrcidFieldComponent
+} from './app/item-page/simple/field-components/specific-field/orcid/item-page-orcid-field.component';
+*/
+
 const DECLARATIONS = [
   FileSectionComponent,
   HomePageComponent,
@@ -245,6 +254,8 @@ const DECLARATIONS = [
   UserMenuComponent,
   BrowseByComponent,
   RegisterEmailFormComponent,
+// oriol orcid
+//ItemPageOrcidFieldComponent,
 ];
 
 @NgModule({
@@ -309,7 +320,8 @@ const DECLARATIONS = [
   declarations: DECLARATIONS,
   exports: [
     CommunityPageSubCollectionListComponent
-  ]
+  ],
+//  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 
   /**

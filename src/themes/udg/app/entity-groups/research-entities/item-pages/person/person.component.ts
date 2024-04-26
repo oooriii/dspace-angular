@@ -8,6 +8,8 @@ import {
 } from '../../../../../../../app/entity-groups/research-entities/item-pages/person/person.component';
 import { Context } from '../../../../../../../app/core/shared/context.model';
 
+
+
 @listableObjectComponent('Person', ViewMode.StandalonePage, Context.Any, 'udg')
 @Component({
   selector: 'ds-person',
@@ -16,5 +18,7 @@ import { Context } from '../../../../../../../app/core/shared/context.model';
   templateUrl: './person.component.html',
   //templateUrl: '../../../../../../../app/entity-groups/research-entities/item-pages/person/person.component.html',
 })
+
+
 export class PersonComponent extends BaseComponent {
 }

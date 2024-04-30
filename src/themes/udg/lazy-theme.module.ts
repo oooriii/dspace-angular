@@ -35,7 +35,9 @@ import { AppModule } from '../../app/app.module';
 import { ItemPageModule } from '../../app/item-page/item-page.module';
 import { RouterModule } from '@angular/router';
 import { CommunityListPageModule } from '../../app/community-list-page/community-list-page.module';
+// theme info module + about fails
 import { InfoModule } from '../../app/info/info.module';
+//import { InfoModule } from './app/info/info.module';
 import { StatisticsPageModule } from '../../app/statistics-page/statistics-page.module';
 import { CommunityPageModule } from '../../app/community-page/community-page.module';
 import { CollectionPageModule } from '../../app/collection-page/collection-page.module';
@@ -162,13 +164,6 @@ import {UserMenuComponent} from './app/shared/auth-nav-menu/user-menu/user-menu.
 import { BrowseByComponent } from './app/shared/browse-by/browse-by.component';
 import { RegisterEmailFormComponent } from './app/register-email-form/register-email-form.component';
 
-// oriol orcid
-/*
-import {
-  ItemPageOrcidFieldComponent
-} from './app/item-page/simple/field-components/specific-field/orcid/item-page-orcid-field.component';
-*/
-
 const DECLARATIONS = [
   FileSectionComponent,
   HomePageComponent,
@@ -254,8 +249,6 @@ const DECLARATIONS = [
   UserMenuComponent,
   BrowseByComponent,
   RegisterEmailFormComponent,
-// oriol orcid
-//ItemPageOrcidFieldComponent,
 ];
 
 @NgModule({

@@ -83,6 +83,12 @@
             <a class="text-white"
                routerLink="info/feedback">{{ 'footer.link.feedback' | translate}}</a>
           </li>
+
+          <li *ngIf="showAbout">
+            <a class="text-white"
+               routerLink="info/about">{{ 'footer.link.about' | translate}}</a>
+          </li>
+
         </ul>
       </div>
     </div>

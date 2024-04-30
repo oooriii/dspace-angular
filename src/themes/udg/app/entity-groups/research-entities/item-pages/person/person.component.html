@@ -35,6 +35,20 @@
     </ds-item-page-orcid-field>
 
 
+    <ds-item-page-rid-field [item]="object"
+    [fields]="['person.identifier.rid']"
+    [author]="object.firstMetadataValue('person.familyName') + ', ' + object.firstMetadataValue('person.givenName')"
+    [label]="'person.page.rid'">
+    </ds-item-page-rid-field>
+  
+
+    <ds-item-page-scopusid-field [item]="object"
+    [fields]="['person.identifier.scopus-author-id']"
+    [author]="object.firstMetadataValue('person.familyName') + ', ' + object.firstMetadataValue('person.givenName')"
+    [label]="'person.page.scopusid'">
+    </ds-item-page-scopusid-field>
+
+
   </div>
   <div class="col-xs-12 col-md-7">
     <ds-related-items

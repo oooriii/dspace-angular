@@ -61,7 +61,7 @@ import { PersonComponent } from './app/entity-groups/research-entities/item-page
 import { LangSwitchComponent } from './app/shared/lang-switch/lang-switch.component';
 
 // oriol - 20240426 - intentant crear nou component
-//import { ItemPageOrcidFieldComponent } from './app/item-page/simple/field-components/specific-field/orcid/item-page-orcid-field.component';
+import { ItemPageOrcidFieldComponent } from './app/item-page/simple/field-components/specific-field/orcid/item-page-orcid-field.component';
 
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
@@ -103,7 +103,7 @@ const DECLARATIONS = [
   LogInComponent,
 //  LangSwitchComponent,
 // oriol - 20240426 - intentant crear nou component
-//ItemPageOrcidFieldComponent,
+ItemPageOrcidFieldComponent,
 ];
 
 @NgModule({

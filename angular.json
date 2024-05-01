@@ -64,6 +64,11 @@
                 "input": "src/themes/udg/styles/theme.scss",
                 "inject": false,
                 "bundleName": "udg-theme"
+              },
+              {
+                "input": "src/themes/ub/styles/theme.scss",
+                "inject": false,
+                "bundleName": "ub-theme"
               }
             ],
             "scripts": [],

@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 //import { EagerThemeModule as DSpaceEagerThemeModule } from './dspace/eager-theme.module';
 // import { EagerThemeModule as CustomEagerThemeModule } from './custom/eager-theme.module';
 // oriol - 20240410 - udg theme
-import { EagerThemeModule as UdGEagerThemeModule } from './udg/eager-theme.module';
+//import { EagerThemeModule as UdGEagerThemeModule } from './udg/eager-theme.module';
+// oriol - 20240501 - ub theme
+import { EagerThemeModule as UBEagerThemeModule } from './ub/eager-theme.module';
+
 
 /**
  * This module bundles the eager theme modules for all available themes.
@@ -16,7 +19,9 @@ import { EagerThemeModule as UdGEagerThemeModule } from './udg/eager-theme.modul
     //DSpaceEagerThemeModule,
     // CustomEagerThemeModule,
     // oriol - 20240410 - udg theme
-    UdGEagerThemeModule,
+    //UdGEagerThemeModule,
+    // oriol - 20240501 - ub theme
+    UBEagerThemeModule,
   ],
 })
 export class EagerThemesModule {

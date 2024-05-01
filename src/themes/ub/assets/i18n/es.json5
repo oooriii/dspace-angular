@@ -1,0 +1,14 @@
+
+{
+
+  // ub theme
+  "info.about.title": "Sobre el DD",
+  "menu.header.image.ublogo": "Universitat de Barcelona",
+  // DSpace default: "All of DSpace"
+  "menu.section.browse_global": "Navega por el DD",
+
+  // DSpace default: "DSpace Angular :: "
+  "repository.title.prefix": "Dipòsit Digital de la Universitat de Barcelona :: ",
+}
+
+

@@ -64,6 +64,8 @@ import { ItemPageOrcidFieldComponent } from './app/item-page/simple/field-compon
 import { ItemPageScopusidFieldComponent } from './app/item-page/simple/field-components/specific-field/scopusid/item-page-scopusid-field.component';
 import { ItemPageRidFieldComponent } from './app/item-page/simple/field-components/specific-field/rid/item-page-rid-field.component';
 
+import { ItemPageAuthorFieldComponent } from './app/item-page/simple/field-components/specific-field/author/item-page-author-field.component';
+
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
  * This will ensure that decorator gets picked up when the app loads
@@ -107,6 +109,8 @@ const DECLARATIONS = [
 ItemPageOrcidFieldComponent,
 ItemPageRidFieldComponent,
 ItemPageScopusidFieldComponent,
+
+ItemPageAuthorFieldComponent,
 ];
 
 @NgModule({

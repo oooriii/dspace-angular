@@ -22,7 +22,9 @@ ui:
 # 'synced' with the 'dspace.server.url' setting in your backend's local.cfg.
 rest:
   ssl: true
-  host: bibliodev.udg.edu
+  #host: bibliodev.udg.edu
+  #host: dipositpre.ub.edu
+  host: api.dspacepre.ub.edu
   port: 443
   # NOTE: Space is capitalized because 'namespace' is a reserved string in TypeScript
   nameSpace: /server

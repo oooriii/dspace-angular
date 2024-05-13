@@ -58,7 +58,7 @@ import { LogInComponent } from './app/shared/log-in/log-in.component';
 import { BrowseEntryListElementComponent } from './app/shared/object-list/browse-entry-list-element/browse-entry-list-element.component';
 import { PersonComponent } from './app/entity-groups/research-entities/item-pages/person/person.component';
 
-import { LangSwitchComponent } from './app/shared/lang-switch/lang-switch.component';
+//import { LangSwitchComponent } from './app/shared/lang-switch/lang-switch.component';
 
 // oriol - 20240426 - intentant crear nou component
 import { ItemPageOrcidFieldComponent } from './app/item-page/simple/field-components/specific-field/orcid/item-page-orcid-field.component';
@@ -101,7 +101,7 @@ const DECLARATIONS = [
   EditCommunitySelectorComponent,
   EditItemSelectorComponent,
   LogInComponent,
-  LangSwitchComponent,
+//  LangSwitchComponent,
 // oriol - 20240426 - intentant crear nou component
 ItemPageOrcidFieldComponent,
 ];

@@ -1,20 +1,11 @@
-<div class="item-page-field">
-    <ds-metadata-values
-      [mdValues]="item?.allMetadata(fields)"
-      [separator]="separator"
-      [label]="label"
-      [enableMarkdown]="enableMarkdown"
-      [urlRegex]="urlRegex"
-      [browseDefinition]="browseDefinition|async"
-    >
-    <strong>manolo!</strong>
-    <a href="https://dugi-doc.udg.edu" target="_blank">ORCID!</a>
-    </ds-metadata-values>
- </div>
-  
- <div class="item-page-field">
-    <div *ngFor="let aut of item?.allMetadata(fields); index as i">{{ aut.value }} | {{ i }} | {{ aut.authority }}
-        <a *ngIf="hasORCID(i, aut.authority)" href="http://google.com" target="_blank">ORCID: {{ orcids[i].orcid_id }}</a>
+<div class="item-page-field item-page-author-field">
+    <h2 class="simple-view-element-header">{{ label | translate }}</h2>
+    <div *ngFor="let aut of item?.allMetadata(fields); index as i" class="simple-view-element">
+        <a [href]="genBrowseUri(aut.value, aut.authority)" class="dont-break-out ng-star-inserted">{{ aut.value }}</a>
+        {{hasORCID(i, aut.authority)}}
+        <a *ngIf="orcids[i]" [href]="prefix+orcids[i].orcid_id" target="_blank" [title]="'orcid['+aut.value+']:'+orcids[i].orcid_id">
+            <img [src]="img_src" [alt]="'orcid['+aut.value+']:'+orcids[i].orcid_id"/>
+        </a>
     </div>
     
  </div>

@@ -3,24 +3,17 @@ import { Component, Input } from '@angular/core';
 import { Item } from '../../../../../../../../app/core/shared/item.model';
 import { ItemPageFieldComponent } from '../../../../../../../../app/item-page/simple/field-components/specific-field/item-page-field.component';
 
-/*
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-*/
 
 import { OrcidData } from '../../../../../core/data/orcid-data';
 import { OrcidAuthorityRequestService } from '../../../../../core/data/orcid-authority-request.service';
 
 
-//import { map } from 'rxjs/operators';
-//import { Observable } from 'rxjs';
-//import { BrowseDefinition } from '../../../../core/shared/browse-definition.model';
 import { BrowseDefinitionDataService } from '../../../../../../../../app/core/browse/browse-definition-data.service';
-//import { getRemoteDataPayload } from '../../../../core/shared/operators';
 
 
 @Component({
   selector: 'ds-themed-item-page-author-field',
+  styleUrls: ['./item-page-author-field.component.scss'],
   templateUrl: './item-page-author-field.component.html',
   providers: [OrcidAuthorityRequestService],
 })
@@ -32,21 +25,6 @@ import { BrowseDefinitionDataService } from '../../../../../../../../app/core/br
  * item page. For that use a {@link MetadataRepresentationListComponent} instead.
  */
 export class ItemPageAuthorFieldComponent extends ItemPageFieldComponent {
-//export class ItemPageAuthorFieldComponent {
-
-  /*super(){
-    this.orcidAuthorityRequestService: OrcidAuthorityRequestService;
-  }
-  */
- /*
-  //private orcidAuthorityRequestService: OrcidAuthorityRequestService;
-  //orcidAuthorityRequestService: OrcidAuthorityRequestService;
-  constructor(orcidAuthorityRequestService: OrcidAuthorityRequestService){
-    super();
-    
-  }
-  protected orcidAuthorityRequestService: OrcidAuthorityRequestService;
-  */
 
   constructor(protected browseDefinitionDataService: BrowseDefinitionDataService, protected orcidAuthorityRequestService: OrcidAuthorityRequestService){
     super(browseDefinitionDataService);
@@ -81,6 +59,9 @@ export class ItemPageAuthorFieldComponent extends ItemPageFieldComponent {
 
   orcids: OrcidData[] = [];
 
+  prefix = 'https://orcid.org/';
+  img_src = '/assets/udg/images/orcid.logo.icon.svg';
+
 
  /**
    * check if orcid exists
@@ -88,21 +69,28 @@ export class ItemPageAuthorFieldComponent extends ItemPageFieldComponent {
    * @param authotrityId              the identifier of the object to retrieve
    */
   hasORCID(i: number, authorityId: string) {
-    //let orcid = undefined;
     if (authorityId){
       this.orcidAuthorityRequestService
       .getOrcid(authorityId)
-      //.subscribe(orcid => (this.orcids.push(orcid)));
       .subscribe(orcid => (this.orcids[i] = orcid));
-      console.info(authorityId);
+      //console.info(authorityId);
+      //console.log(this.orcids[i]);
     }
-    /*
-    let resp = this.getORCID(authorityId);
-    console.warn(resp);
-    return '0000-0001-9933-370X';
-    */
-  }
 
+  }
+ /**
+   * gen browse uri
+   *
+   * @param authotrityId              the identifier of the object to retrieve
+   * @param value                     the name
+   */
+ genBrowseUri(value: string, authorityId: string): string {
+    let uri = '/browse/author?value=' + value;
+    if (authorityId) {
+      uri += '&authority=' + authorityId;
+    }
+    return uri;
+ }
 
 }
 

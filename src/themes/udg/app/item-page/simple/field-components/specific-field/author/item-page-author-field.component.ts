@@ -3,14 +3,26 @@ import { Component, Input } from '@angular/core';
 import { Item } from '../../../../../../../../app/core/shared/item.model';
 import { ItemPageFieldComponent } from '../../../../../../../../app/item-page/simple/field-components/specific-field/item-page-field.component';
 
-
+/*
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+*/
+
+import { OrcidData } from '../../../../../core/data/orcid-data';
+import { OrcidAuthorityRequestService } from '../../../../../core/data/orcid-authority-request.service';
+
+
+//import { map } from 'rxjs/operators';
+//import { Observable } from 'rxjs';
+//import { BrowseDefinition } from '../../../../core/shared/browse-definition.model';
+import { BrowseDefinitionDataService } from '../../../../../../../../app/core/browse/browse-definition-data.service';
+//import { getRemoteDataPayload } from '../../../../core/shared/operators';
 
 
 @Component({
   selector: 'ds-themed-item-page-author-field',
-  templateUrl: './item-page-author-field.component.html'
+  templateUrl: './item-page-author-field.component.html',
+  providers: [OrcidAuthorityRequestService],
 })
 /**
  * This component is used for displaying the author (dc.contributor.author, dc.creator and
@@ -20,6 +32,25 @@ import { Observable } from 'rxjs';
  * item page. For that use a {@link MetadataRepresentationListComponent} instead.
  */
 export class ItemPageAuthorFieldComponent extends ItemPageFieldComponent {
+//export class ItemPageAuthorFieldComponent {
+
+  /*super(){
+    this.orcidAuthorityRequestService: OrcidAuthorityRequestService;
+  }
+  */
+ /*
+  //private orcidAuthorityRequestService: OrcidAuthorityRequestService;
+  //orcidAuthorityRequestService: OrcidAuthorityRequestService;
+  constructor(orcidAuthorityRequestService: OrcidAuthorityRequestService){
+    super();
+    
+  }
+  protected orcidAuthorityRequestService: OrcidAuthorityRequestService;
+  */
+
+  constructor(protected browseDefinitionDataService: BrowseDefinitionDataService, protected orcidAuthorityRequestService: OrcidAuthorityRequestService){
+    super(browseDefinitionDataService);
+  }
 
   /**
    * The item to display metadata for
@@ -48,8 +79,7 @@ export class ItemPageAuthorFieldComponent extends ItemPageFieldComponent {
   label = 'item.page.author';
 
 
-  private http: HttpClient;
-  private apiUrl = 'https://bibliodev.udg.edu/server/api/orcid/find?uuid=';
+  orcids: OrcidData[] = [];
 
 
  /**
@@ -57,54 +87,23 @@ export class ItemPageAuthorFieldComponent extends ItemPageFieldComponent {
    *
    * @param authotrityId              the identifier of the object to retrieve
    */
-  hasORCID(authorityId: string): string {
+  hasORCID(i: number, authorityId: string) {
+    //let orcid = undefined;
+    if (authorityId){
+      this.orcidAuthorityRequestService
+      .getOrcid(authorityId)
+      //.subscribe(orcid => (this.orcids.push(orcid)));
+      .subscribe(orcid => (this.orcids[i] = orcid));
+      console.info(authorityId);
+    }
+    /*
     let resp = this.getORCID(authorityId);
     console.warn(resp);
     return '0000-0001-9933-370X';
+    */
   }
 
-  getORCID(authorityId: string): Observable<any> {
-    //url = "https://bibliodev.udg.edu/server/api/orcid/find?uuid=7307986c-bae1-44bb-a824-b7b7ec21995d";
-    let url = this.apiUrl + authorityId;
-    /*
-    let httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-      observe: 'response'
-    };
-    */
-   /*
-    this.http.get(url, {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-      observe: 'response'
-    }).subscribe(
-      data => {
-        console.warn(JSON.stringify(data, null, 2));
-        return this.apiUrl;
-      },
-      error => {
-        console.error(error.errorMessage);
-    });
-    */
-    return this.http.get(url);
-    //return '';
-    /*
-    .pipe(
-      return '0000-0001-9933-370X';
-    );
-    */
-    /*
-    if(resp.statusCode == 200){
-      return resp.body;
-    else{
-      return '';
-    }
-
-    return resp;
-    //if resp.statusCode
-
-    return '0000-0001-9933-370X';
-    */
 
 }
 
-}
+

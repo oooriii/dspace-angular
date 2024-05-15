@@ -13,8 +13,8 @@
  </div>
   
  <div class="item-page-field">
-    <div *ngFor="let aut of item?.allMetadata(fields)">{{ aut.value }} | {{ aut.authority }}
-        <a *ngIf="hasORCID(aut.authority) != ''" href="http://google.com" target="_blank">ORCID: {{ hasORCID(aut.authority) }}</a>
+    <div *ngFor="let aut of item?.allMetadata(fields); index as i">{{ aut.value }} | {{ i }} | {{ aut.authority }}
+        <a *ngIf="hasORCID(i, aut.authority)" href="http://google.com" target="_blank">ORCID: {{ orcids[i].orcid_id }}</a>
     </div>
     
  </div>

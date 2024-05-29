@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-//import { PrivacyComponent as BaseComponent } from '../../../../../app/info/privacy/privacy.component';
 
 @Component({
   selector: 'ds-about',

@@ -18,7 +18,8 @@ export function getFeedbackPath() {
 }
 
 export function getAboutPath() {
-    console.log('about!', getSubPath(ABOUT_PATH))
+    console.log('about!', getSubPath(ABOUT_PATH));
+    return 'MANOLO';
     return getSubPath(ABOUT_PATH);
 }
 

@@ -46,7 +46,7 @@
 prova
 </ds-item-page-author-field>
 -->
-<ds-themed-item-page-author-field [item]="object"></ds-themed-item-page-author-field>
+<ds-themed-item-page-author-field [item]="object">prova</ds-themed-item-page-author-field>
 
 
     <ds-generic-item-page-field [item]="object"
@@ -86,12 +86,6 @@ prova
       [fields]="['dc.identifier.uri']"
       [label]="'item.page.uri'">
     </ds-item-page-uri-field>
-
-    <!-- geolocation -->
-<!--
-    <ds-item-page-geomap-field [item]="object"/>
--->
-
     <ds-item-page-collections [item]="object"></ds-item-page-collections>
     <div>
       <a class="btn btn-outline-primary" [routerLink]="[itemPageRoute + '/full']" role="button">

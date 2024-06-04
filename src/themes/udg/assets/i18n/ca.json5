@@ -6,9 +6,6 @@
   // DSpace default: "DSpace Angular :: "
   "repository.title.prefix": "DSpace :: ",
   "info.about.title": "Sobre el DUGi",
-  "footer.link.about": "Sobre el DUGi",
-  // geolocation
-  "item.page.geomap": "Localització",
 }
 
 

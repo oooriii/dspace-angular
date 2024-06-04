@@ -31,11 +31,6 @@ import { APP_CONFIG, AppConfig } from '../config/app-config.interface';
 import { StoreDevModules } from '../config/store/devtools';
 import { RootModule } from './root.module';
 
-/*
-// oriol -geomap
-import { AgmCoreModule } from '@agm/core';
-*/
-
 export function getConfig() {
   return environment;
 }
@@ -66,13 +61,6 @@ const IMPORTS = [
   StoreDevModules,
   EagerThemesModule,
   RootModule,
-/*
-  // oriol - geomaps
-  AgmCoreModule.forRoot({
-    apiKey: 'AIzaSyAsMcr_0zqJ0QG18Z4cx-ETuOps02jhD3g'
-  }),
-*/
-
 ];
 
 const PROVIDERS = [

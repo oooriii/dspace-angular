@@ -66,6 +66,15 @@ import { ItemPageRidFieldComponent } from './app/item-page/simple/field-componen
 
 import { ItemPageAuthorFieldComponent } from './app/item-page/simple/field-components/specific-field/author/item-page-author-field.component';
 
+/*
+import { ItemPageGeoMapFieldComponent } from './app/item-page/simple/field-components/specific-field/geolocation/item-page-geo-map-field.component';
+*/
+/*
+// GeoMapModule
+import { AgmCoreModule } from '@agm/core';
+import { GeoMapModule } from './app/item-page/simple/field-components/specific-field/geolocation/geo-map.module';
+*/
+
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
  * This will ensure that decorator gets picked up when the app loads
@@ -111,7 +120,12 @@ ItemPageRidFieldComponent,
 ItemPageScopusidFieldComponent,
 
 ItemPageAuthorFieldComponent,
+/*
+ItemPageGeoMapFieldComponent,
+*/
 ];
+
+
 
 @NgModule({
   imports: [
@@ -124,6 +138,16 @@ ItemPageAuthorFieldComponent,
     ItemPageModule,
     ItemSharedModule,
     DsoPageModule,
+/*
+    AgmCoreModule,
+*/
+/*
+    GeoMapModule,
+    // oriol - geomaps
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAsMcr_0zqJ0QG18Z4cx-ETuOps02jhD3g'
+    }),
+  */
   ],
   declarations: DECLARATIONS,
   providers: [

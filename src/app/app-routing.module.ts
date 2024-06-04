@@ -41,6 +41,12 @@ import { ServerCheckGuard } from './core/server-check/server-check.guard';
 import { MenuResolver } from './menu.resolver';
 import { ThemedPageErrorComponent } from './page-error/themed-page-error.component';
 
+/*
+// oriol -geomap
+import { AgmCoreModule } from '@agm/core';
+*/
+
+
 @NgModule({
   imports: [
     RouterModule.forRoot([
@@ -239,7 +245,14 @@ import { ThemedPageErrorComponent } from './page-error/themed-page-error.compone
           },
           { path: '**', pathMatch: 'full', component: ThemedPageNotFoundComponent },
         ]
-      }
+    }
+/*
+      },
+  // oriol - geomaps
+  AgmCoreModule.forRoot({
+    apiKey: 'AIzaSyAsMcr_0zqJ0QG18Z4cx-ETuOps02jhD3g'
+  }),
+*/
     ], {
       // enableTracing: true,
       useHash: false,

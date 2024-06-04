@@ -47,6 +47,11 @@ import { SearchModule } from '../../app/shared/search/search.module';
 import { ResourcePoliciesModule } from '../../app/shared/resource-policies/resource-policies.module';
 import { ComcolModule } from '../../app/shared/comcol/comcol.module';
 import { RootModule } from '../../app/root.module';
+/*
+// GeoMapModule
+import { AgmCoreModule } from '@agm/core';
+import { GeoMapModule } from './app/item-page/simple/field-components/specific-field/geolocation/geo-map.module';
+*/
 import { FileSectionComponent } from './app/item-page/simple/field-components/file-section/file-section.component';
 import { HomePageComponent } from './app/home-page/home-page.component';
 import { RootComponent } from './app/root/root.component';
@@ -309,6 +314,9 @@ const DECLARATIONS = [
     NgxGalleryModule,
     FormModule,
     RequestCopyModule,
+
+ //   AgmCoreModule,
+ //   GeoMapModule,
   ],
   declarations: DECLARATIONS,
   exports: [

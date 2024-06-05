@@ -1,6 +1,12 @@
 //import { Component } from '@angular/core';
 //import { Component, Input, OnInit } from '@angular/core';
-import { Component, Input} from '@angular/core';
+//import { Component, Input} from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
+//import { leaflet } from 'leaflet';
+//import { tileLayer, latLng, control, marker, icon, divIcon, LatLngBounds, Map, MapOptions } from 'leaflet';
+//import type * as L from 'leaflet';
+import L from 'leaflet';
+
 import { Item } from '../../../../../../../../app/core/shared/item.model';
 import {
   ItemPageFieldComponent
@@ -54,7 +60,7 @@ import {
    */
   //geoJSON: Object;
 
-
+/* google maps
   lat = 48.75606;
   lng = -118.859;
 
@@ -69,7 +75,14 @@ import {
     { lat: 12.09407, lng: 26.31618, alpha: 1 },
     { lat: 47.92393, lng: 78.58339, alpha: 1 }
   ];
+*/
 
+private map!: L.Map;
+
+markers: L.Marker[] = [
+  L.marker([31.9539, 35.9106]), // Amman
+  L.marker([32.5568, 35.8469]) // Irbid
+];
 
  /**
    * gen Localizations json
@@ -115,7 +128,7 @@ ngOnInit(): void {
 
 
 
-
+/* google maps
 addMarker(lat: number, lng: number) {
   this.markers.push({ lat, lng, alpha: 0.4 });
 }
@@ -134,6 +147,36 @@ selectMarker(event) {
     lng: event.longitude
   };
 }
+*/
 
+ngAfterViewInit() {
+  console.log('GEOLOCATION!');
+  this.initializeMap();
+  this.addMarkers();
+  this.centerMap();
+}
+
+
+private initializeMap() {
+  const baseMapURl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+  this.map = L.map('map');
+  L.tileLayer(baseMapURl).addTo(this.map);
+  console.log('GEOLOCATION!222222');
+}
+
+
+private addMarkers() {
+  // Add your markers to the map
+  this.markers.forEach(marker => marker.addTo(this.map));
+  console.log('GEOLOCATION!33333333');
+}
+
+private centerMap() {
+  // Create a LatLngBounds object to encompass all the marker locations
+  const bounds = L.latLngBounds(this.markers.map(marker => marker.getLatLng()));
+  // Fit the map view to the bounds
+  this.map.fitBounds(bounds);
+  console.log('GEOLOCATION!44444444');
+}
 
 }

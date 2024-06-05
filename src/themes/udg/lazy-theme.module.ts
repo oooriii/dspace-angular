@@ -50,8 +50,9 @@ import { RootModule } from '../../app/root.module';
 /*
 // GeoMapModule
 import { AgmCoreModule } from '@agm/core';
-import { GeoMapModule } from './app/item-page/simple/field-components/specific-field/geolocation/geo-map.module';
 */
+//import { GeoMapModule } from './app/item-page/simple/field-components/specific-field/geolocation/geo-map.module';
+
 import { FileSectionComponent } from './app/item-page/simple/field-components/file-section/file-section.component';
 import { HomePageComponent } from './app/home-page/home-page.component';
 import { RootComponent } from './app/root/root.component';
@@ -168,6 +169,10 @@ import { RequestCopyModule } from 'src/app/request-copy/request-copy.module';
 import {UserMenuComponent} from './app/shared/auth-nav-menu/user-menu/user-menu.component';
 import { BrowseByComponent } from './app/shared/browse-by/browse-by.component';
 import { RegisterEmailFormComponent } from './app/register-email-form/register-email-form.component';
+
+//import { GoogleMap, GoogleMapsModule } from '@angular/google-maps';
+// GeoMapModule
+//import { AgmCoreModule } from '@agm/core';
 
 const DECLARATIONS = [
   FileSectionComponent,
@@ -317,10 +322,21 @@ const DECLARATIONS = [
 
  //   AgmCoreModule,
  //   GeoMapModule,
+
+//    GoogleMapsModule,
+//    GoogleMap,
+  /*
+    // oriol - geomaps
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAsMcr_0zqJ0QG18Z4cx-ETuOps02jhD3g'
+    }),
+  */
   ],
   declarations: DECLARATIONS,
   exports: [
-    CommunityPageSubCollectionListComponent
+    CommunityPageSubCollectionListComponent,
+//    AgmCoreModule,
+
   ],
 //  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

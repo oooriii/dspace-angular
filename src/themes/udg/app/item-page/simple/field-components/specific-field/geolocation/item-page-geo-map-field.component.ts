@@ -7,6 +7,10 @@ import {
 } from '../../../../../../../../app/item-page/simple/field-components/specific-field/item-page-field.component';
 
 
+//import { GeoMapModule } from './geo-map.module';
+
+//import { GoogleMap } from '@angular/google-maps';
+
 @Component({
   selector: 'ds-item-page-geomap-field',
   styleUrls: ['./item-page-geo-map-field.component.scss'],

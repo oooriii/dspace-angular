@@ -31,10 +31,12 @@ import { APP_CONFIG, AppConfig } from '../config/app-config.interface';
 import { StoreDevModules } from '../config/store/devtools';
 import { RootModule } from './root.module';
 
-/*
+
 // oriol -geomap
-import { AgmCoreModule } from '@agm/core';
-*/
+//import { AgmCoreModule } from '@agm/core';
+
+//import { GoogleMap } from '@angular/google-maps';
+//import { GoogleMap, GoogleMapsModule } from '@angular/google-maps';
 
 export function getConfig() {
   return environment;
@@ -66,13 +68,18 @@ const IMPORTS = [
   StoreDevModules,
   EagerThemesModule,
   RootModule,
+
 /*
   // oriol - geomaps
   AgmCoreModule.forRoot({
-    apiKey: 'AIzaSyAsMcr_0zqJ0QG18Z4cx-ETuOps02jhD3g'
+    apiKey: 'AIzaSyBWDbF9yvULTicihVVz-p-Moia6SuYgNlc'
   }),
 */
-
+// oriol geomaps
+/*
+GoogleMap,
+GoogleMapsModule,
+*/
 ];
 
 const PROVIDERS = [

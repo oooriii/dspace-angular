@@ -24,7 +24,9 @@
     "target": "ES2022",
     "typeRoots": [
       "node_modules/@types",
-      "src/typings.d.ts"
+      "src/typings.d.ts",
+      // oriol
+      //"@types/google.maps"
     ],
     "lib": [
       "dom",
@@ -38,7 +40,9 @@
     ],
     "types": [
       "node",
-      "jasmine"
+      "jasmine",
+      // oriol
+      //"google"
     ],
     "useDefineForClassFields": false
   },

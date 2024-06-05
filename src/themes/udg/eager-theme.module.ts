@@ -57,7 +57,9 @@ import { TopLevelCommunityListComponent } from './app/home-page/top-level-commun
 import { LogInComponent } from './app/shared/log-in/log-in.component';
 import { BrowseEntryListElementComponent } from './app/shared/object-list/browse-entry-list-element/browse-entry-list-element.component';
 import { PersonComponent } from './app/entity-groups/research-entities/item-pages/person/person.component';
+// oriol error no carrega header
 import { LangSwitchComponent } from './app/shared/lang-switch/lang-switch.component';
+//import { LangSwitchComponent } from '../../app/shared/lang-switch/lang-switch.component';
 
 // oriol - 20240426 - intentant crear nou component
 import { ItemPageOrcidFieldComponent } from './app/item-page/simple/field-components/specific-field/orcid/item-page-orcid-field.component';
@@ -66,12 +68,15 @@ import { ItemPageRidFieldComponent } from './app/item-page/simple/field-componen
 
 import { ItemPageAuthorFieldComponent } from './app/item-page/simple/field-components/specific-field/author/item-page-author-field.component';
 
-/*
+
 import { ItemPageGeoMapFieldComponent } from './app/item-page/simple/field-components/specific-field/geolocation/item-page-geo-map-field.component';
-*/
-/*
+
+//import { GoogleMap, GoogleMapsModule } from '@angular/google-maps';
+//import { GoogleMapsModule } from '@angular/google-maps';
+
 // GeoMapModule
-import { AgmCoreModule } from '@agm/core';
+//import { AgmCoreModule } from '@agm/core';
+/*
 import { GeoMapModule } from './app/item-page/simple/field-components/specific-field/geolocation/geo-map.module';
 */
 
@@ -120,9 +125,9 @@ ItemPageRidFieldComponent,
 ItemPageScopusidFieldComponent,
 
 ItemPageAuthorFieldComponent,
-/*
+
 ItemPageGeoMapFieldComponent,
-*/
+
 ];
 
 
@@ -143,15 +148,26 @@ ItemPageGeoMapFieldComponent,
 */
 /*
     GeoMapModule,
+*/
+/*
     // oriol - geomaps
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAsMcr_0zqJ0QG18Z4cx-ETuOps02jhD3g'
     }),
-  */
+*/
+
+//    GoogleMapsModule,
+//    GoogleMap,
+
+//GoogleMapsModule,
   ],
   declarations: DECLARATIONS,
   providers: [
     ...ENTRY_COMPONENTS.map((component) => ({provide: component}))
+  ],
+// oriol
+  exports: [
+//    AgmCoreModule,
   ],
 })
 /**

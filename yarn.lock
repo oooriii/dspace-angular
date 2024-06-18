@@ -1515,6 +1515,13 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
+"@bluehalo/ngx-leaflet@^18.0.2":
+  version "18.0.2"
+  resolved "https://registry.yarnpkg.com/@bluehalo/ngx-leaflet/-/ngx-leaflet-18.0.2.tgz#9cf34d86984e9b4346acd98b7925eea5b1b35a94"
+  integrity sha512-kFohZET6iUUmmrTGrZ4EurtUEzbV3qJ8DdwlzV8NgyoPYDvQoC+JhfjrmeTzfgH94rM4p24eHOPeSW/XueuUKw==
+  dependencies:
+    tslib "^2.3.0"
+
 "@colors/colors@1.5.0":
   version "1.5.0"
   resolved "https://registry.npmjs.org/@colors/colors/-/colors-1.5.0.tgz"

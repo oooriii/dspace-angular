@@ -173,6 +173,7 @@ import { RegisterEmailFormComponent } from './app/register-email-form/register-e
 //import { GoogleMap, GoogleMapsModule } from '@angular/google-maps';
 // GeoMapModule
 //import { AgmCoreModule } from '@agm/core';
+import { LeafletModule } from '@bluehalo/ngx-leaflet';
 
 const DECLARATIONS = [
   FileSectionComponent,
@@ -331,6 +332,9 @@ const DECLARATIONS = [
       apiKey: 'AIzaSyAsMcr_0zqJ0QG18Z4cx-ETuOps02jhD3g'
     }),
   */
+ // oriol
+LeafletModule,
+
   ],
   declarations: DECLARATIONS,
   exports: [

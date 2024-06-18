@@ -80,6 +80,8 @@ import { ItemPageGeoMapFieldComponent } from './app/item-page/simple/field-compo
 import { GeoMapModule } from './app/item-page/simple/field-components/specific-field/geolocation/geo-map.module';
 */
 
+import { LeafletModule } from '@bluehalo/ngx-leaflet';
+
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
  * This will ensure that decorator gets picked up when the app loads
@@ -160,6 +162,9 @@ ItemPageGeoMapFieldComponent,
 //    GoogleMap,
 
 //GoogleMapsModule,
+// oriol
+LeafletModule,
+
   ],
   declarations: DECLARATIONS,
   providers: [

@@ -9,6 +9,7 @@ import {
   UntypedItemComponent as BaseComponent
 } from '../../../../../../../app/item-page/simple/item-types/untyped-item/untyped-item.component';
 
+
 /**
  * Component that represents an untyped Item page
  */

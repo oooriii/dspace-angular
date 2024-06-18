@@ -9,8 +9,10 @@ import { Observable, Subscriber } from 'rxjs';
 //import { tileLayer, latLng, control, marker, icon, divIcon, LatLngBounds, Map, MapOptions } from 'leaflet';
 //import type * as L from 'leaflet';
 //import { } from '@types/leaflet';
+
 import L from 'leaflet';
 import * as Leaflet from 'leaflet';
+
 
 //import Leaflet from 'leaflet';
 
@@ -86,14 +88,14 @@ import { environment } from '../../../../../../../../environments/environment';
     { lat: 47.92393, lng: 78.58339, alpha: 1 }
   ];
 */
-
+/*
 private map!: L.Map;
 
 markers: L.Marker[] = [
   L.marker([31.9539, 35.9106]), // Amman
   L.marker([32.5568, 35.8469]) // Irbid
 ];
-
+*/
 //new
 options: Leaflet.MapOptions = {
   layers: getLayers(),
@@ -101,6 +103,8 @@ options: Leaflet.MapOptions = {
   center: new Leaflet.LatLng(43.530147, 16.488932)
 };
 
+
+map: any;
 
 // old
 private mapboxToken = 'pk.eyJ1IjoiYmlibGlvdWRnIiwiYSI6ImNqZzR4cWc4bjR3b3Eyd3FuYzY0b2JjdjIifQ.ljNt041Ikuu5JAvf9Mwv2Q';
@@ -155,7 +159,7 @@ ngOnInit(): void {
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(this.map);
 */
-/*
+
     this.map = L.map('map').setView([0, 0], 1);
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -181,7 +185,7 @@ ngOnInit(): void {
       const marker = L.marker([position.latitude, position.longitude], { icon }).bindPopup('Angular Leaflet');
       marker.addTo(this.map);
     });
-*/
+
 
 }
 
@@ -200,6 +204,7 @@ private getCurrentPosition(): any {
     }
   });
 }
+
 
 /* google maps
 addMarker(lat: number, lng: number) {
@@ -229,7 +234,7 @@ ngAfterViewInit() {
   this.addMarkers();
   this.centerMap();
   */
-  this.initializeMap();
+ // this.initializeMap();
  console.log('after');
 }
 
@@ -246,6 +251,7 @@ private initializeMap() {
   */
 //  L.tileLayer(baseMapURl).addTo(this.map);
 
+/*
 this.map = L.map('map').setView([51.505, -0.09], 13);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -257,9 +263,12 @@ L.marker([51.5, -0.09]).addTo(this.map)
     .openPopup();
 
   console.log('GEOLOCATION!222222');
+*/
+
 }
 
 
+/*
 private addMarkers() {
   // Add your markers to the map
   this.markers.forEach(marker => marker.addTo(this.map));
@@ -273,8 +282,10 @@ private centerMap() {
   this.map.fitBounds(bounds);
   console.log('GEOLOCATION!44444444');
 }
+*/
 
 }
+
 
 export const getLayers = (): Leaflet.Layer[] => {
   return [

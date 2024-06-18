@@ -38,6 +38,7 @@ import { RootModule } from './root.module';
 //import { GoogleMap } from '@angular/google-maps';
 //import { GoogleMap, GoogleMapsModule } from '@angular/google-maps';
 //import { LeafletModule } from '@bluehalo/ngx-leaflet';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 export function getConfig() {
   return environment;
@@ -81,7 +82,8 @@ const IMPORTS = [
 GoogleMap,
 GoogleMapsModule,
 */
-//LeafletModule,
+LeafletModule,
+//LeafletModule.forRoot()
 ];
 
 const PROVIDERS = [

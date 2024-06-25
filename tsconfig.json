@@ -25,8 +25,6 @@
     "typeRoots": [
       "node_modules/@types",
       "src/typings.d.ts",
-      // oriol
-      //"@types/google.maps"
     ],
     "lib": [
       "dom",
@@ -41,11 +39,8 @@
     "types": [
       "node",
       "jasmine",
-      // oriol
-      //"google"
+      "leaflet"
     ],
-    //"useDefineForClassFields": false
-    // oriol
     "useDefineForClassFields": false,
     "skipLibCheck": true,
   },

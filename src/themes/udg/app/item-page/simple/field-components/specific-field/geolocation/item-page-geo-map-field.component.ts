@@ -7,14 +7,15 @@ import { Observable, Subscriber } from 'rxjs';
 
 //import { leaflet } from 'leaflet';
 //import { tileLayer, latLng, control, marker, icon, divIcon, LatLngBounds, Map, MapOptions } from 'leaflet';
-//import type * as L from 'leaflet';
+import type * as L from 'leaflet';
 //import { } from '@types/leaflet';
 
+/*
 import L from 'leaflet';
 import * as Leaflet from 'leaflet';
+*/
 
-
-//import Leaflet from 'leaflet';
+import Leaflet from 'leaflet';
 
 import { Item } from '../../../../../../../../app/core/shared/item.model';
 import {
@@ -97,6 +98,7 @@ markers: L.Marker[] = [
 ];
 */
 //new
+
 options: Leaflet.MapOptions = {
   layers: getLayers(),
   zoom: 12,
@@ -160,6 +162,7 @@ ngOnInit(): void {
   }).addTo(this.map);
 */
 
+/*
     this.map = L.map('map').setView([0, 0], 1);
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -185,10 +188,12 @@ ngOnInit(): void {
       const marker = L.marker([position.latitude, position.longitude], { icon }).bindPopup('Angular Leaflet');
       marker.addTo(this.map);
     });
+*/
 
 
 }
 
+/*
 private getCurrentPosition(): any {
   return new Observable((observer: Subscriber<any>) => {
     if (navigator.geolocation) {
@@ -204,7 +209,7 @@ private getCurrentPosition(): any {
     }
   });
 }
-
+*/
 
 /* google maps
 addMarker(lat: number, lng: number) {
@@ -294,3 +299,4 @@ export const getLayers = (): Leaflet.Layer[] => {
     } as Leaflet.TileLayerOptions),
   ] as Leaflet.Layer[];
 };
+

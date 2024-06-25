@@ -80,8 +80,12 @@ import { ItemPageGeoMapFieldComponent } from './app/item-page/simple/field-compo
 import { GeoMapModule } from './app/item-page/simple/field-components/specific-field/geolocation/geo-map.module';
 */
 
-//import { LeafletModule } from '@bluehalo/ngx-leaflet';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { LeafletModule } from '@bluehalo/ngx-leaflet';
+//import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+
+//import { LeafletComponent } from '../../app/shared/leaflet/leaflet.component';
+//import { DSLeafletModule } from '../../app/core/leaflet/DSleaflet.module';
+
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
  * This will ensure that decorator gets picked up when the app loads
@@ -103,6 +107,9 @@ const ENTRY_COMPONENTS = [
   ItemSearchResultListElementComponent,
   TopLevelCommunityListComponent,
   BrowseEntryListElementComponent,
+
+// oriol
+//LeafletComponent,
 ];
 
 const DECLARATIONS = [
@@ -163,6 +170,7 @@ ItemPageGeoMapFieldComponent,
 
 //GoogleMapsModule,
 // oriol
+//DSLeafletModule,
 LeafletModule,
   ],
   declarations: DECLARATIONS,
@@ -172,6 +180,7 @@ LeafletModule,
 // oriol
   exports: [
 //    AgmCoreModule,
+LeafletModule,
   ],
 })
 /**

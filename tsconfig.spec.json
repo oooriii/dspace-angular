@@ -6,7 +6,8 @@
     "types": [
       "jasmine",
       "node",
-      "grecaptcha"
+      "grecaptcha",
+      "leaflet"
     ]
   },
   "files": [

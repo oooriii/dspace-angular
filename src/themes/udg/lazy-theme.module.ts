@@ -174,7 +174,9 @@ import { RegisterEmailFormComponent } from './app/register-email-form/register-e
 // GeoMapModule
 //import { AgmCoreModule } from '@agm/core';
 //import { LeafletModule } from '@bluehalo/ngx-leaflet';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+//import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+//import { DSLeafletModule } from '../../app/core/leaflet/DSleaflet.module';
+//import { LeafletComponent } from '../../app/shared/leaflet/leaflet.component';
 
 const DECLARATIONS = [
   FileSectionComponent,
@@ -261,6 +263,8 @@ const DECLARATIONS = [
   UserMenuComponent,
   BrowseByComponent,
   RegisterEmailFormComponent,
+  // oriol
+//  LeafletComponent,
 ];
 
 @NgModule({
@@ -334,7 +338,7 @@ const DECLARATIONS = [
     }),
   */
  // oriol
-LeafletModule,
+//DSLeafletModule,
 
   ],
   declarations: DECLARATIONS,

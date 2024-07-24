@@ -9,6 +9,9 @@ import { HeaderNavbarWrapperComponent } from './app/header-nav-wrapper/header-na
 import { RootModule } from '../../app/root.module';
 import { NavbarModule } from '../../app/navbar/navbar.module';
 import { PublicationComponent } from './app/item-page/simple/item-types/publication/publication.component';
+// oriol thesis
+import { ThesisComponent } from './app/item-page/simple/item-types/thesis/thesis.component';
+
 import { ItemPageModule } from '../../app/item-page/item-page.module';
 import { FooterComponent } from './app/footer/footer.component';
 import { JournalComponent } from './app/entity-groups/journal-entities/item-pages/journal/journal.component';
@@ -71,6 +74,9 @@ import { ItemPageAuthorFieldComponent } from './app/item-page/simple/field-compo
 
 import { ItemPageGeoMapFieldComponent } from './app/item-page/simple/field-components/specific-field/geolocation/item-page-geo-map-field.component';
 
+
+import { HandleTdxComponent } from './app/item-page/simple/field-components/specific-field/handle_tdx/handle_tdx.component';
+
 //import { GoogleMap, GoogleMapsModule } from '@angular/google-maps';
 //import { GoogleMapsModule } from '@angular/google-maps';
 
@@ -110,6 +116,9 @@ const ENTRY_COMPONENTS = [
 
 // oriol
 //LeafletComponent,
+ThesisComponent,
+HandleTdxComponent,
+
 ];
 
 const DECLARATIONS = [

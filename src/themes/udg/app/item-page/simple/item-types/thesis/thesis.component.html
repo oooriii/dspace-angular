@@ -21,18 +21,10 @@
         <ds-themed-thumbnail [thumbnail]="object?.thumbnail | async"></ds-themed-thumbnail>
         -->
         <ds-themed-thumbnail [thumbnail]="object?.thumbnail | async"
-        [defaultImage]="getThumbSrc(object?.firstMetadata('dc.type'))"
-        [alt]="'thumbnail.thesis.alt'"
-        [placeholder]="'thumbnail.thesis.placeholder'">
-        </ds-themed-thumbnail>
-
-<!--
-    <ds-themed-thumbnail [thumbnail]="object?.thumbnail | async"
         [defaultImage]="'/assets/udg/images/tesis.png'"
         [alt]="'thumbnail.thesis.alt'"
         [placeholder]="'thumbnail.thesis.placeholder'">
     </ds-themed-thumbnail>
--->
       </ds-metadata-field-wrapper>
     </ng-container>
     <div *ngIf="mediaViewer.image || mediaViewer.video" class="mb-2">
@@ -51,13 +43,12 @@
 
     <!-- autors amb orcid -->
     <ds-themed-item-page-author-field [item]="object" [fields]="['dc.contributor.author', 'dc.creator']" [label]="'item.page.author' | translate"></ds-themed-item-page-author-field>
-    <!--
-    <pre>
-        {{ object?.allMetadata('dc.contributor.author') | json }}
-    </pre>
-    -->
+    <!-- directors amb orcid -->
+    <ds-themed-item-page-author-field [item]="object" [fields]="['dc.contributor.director']" [label]="'item.page.director' | translate"></ds-themed-item-page-author-field>
+    <!-- tutors amb orcid -->
+    <ds-themed-item-page-author-field [item]="object" [fields]="['dc.contributor.tutor']" [label]="'item.page.tutor' | translate"></ds-themed-item-page-author-field>
 
-
+<!-- no cal per tesis 
     <ds-generic-item-page-field [item]="object"
       [fields]="['journal.title']"
       [label]="'publication.page.journal-title'">
@@ -74,8 +65,14 @@
       [fields]="['dc.publisher']"
       [label]="'publication.page.publisher'">
     </ds-generic-item-page-field>
+-->
   </div>
   <div class="col-xs-12 col-md-7">
+    <!-- oriol handle tdx -->
+    <ds-item-page-tdx_uri [item]="object"
+    [fields]="['dc.identifier.uri']"
+    [label]="'item.page.handle'">
+    </ds-item-page-tdx_uri>
 
     <ds-related-items
       [parentItem]="object"
@@ -107,10 +104,12 @@
       [fields]="['dc.identifier.citation']"
       [label]="'item.page.citation'">
     </ds-generic-item-page-field>
+    <!-- fora a tesis
     <ds-item-page-uri-field [item]="object"
       [fields]="['dc.identifier.uri']"
       [label]="'item.page.uri'">
     </ds-item-page-uri-field>
+    -->
     <ds-item-page-collections [item]="object"></ds-item-page-collections>
     <div>
       <a class="btn btn-outline-primary" role="button" [routerLink]="[itemPageRoute + '/full']">

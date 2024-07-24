@@ -1,0 +1,10 @@
+<h2 class="simple-view-element-header">{{ label | translate }}</h2>
+<div *ngFor="let uri of item?.allMetadata(fields); index as i" class="simple-view-element">
+  <!--
+  <div *ngIf="isTDXUri('http://hdl.handle.net/10803/1234')" class="item-page-field-uri">
+  -->
+  <div *ngIf="isTDXUri(uri.value)" class="item-page-field-uri">
+    <a class="item-page-field-uri" [href]="uri.value" target="_blank" title="Handle TDX">{{ uri.value }}</a>
+  </div>
+
+</div>

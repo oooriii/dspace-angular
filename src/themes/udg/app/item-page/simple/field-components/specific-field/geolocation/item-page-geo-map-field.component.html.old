@@ -1,0 +1,4 @@
+<div class="item-page-field">
+  <h2 class="simple-view-element-header">{{ label | translate }}</h2>
+  <div id="map" style="height: 300px;"></div>
+</div>

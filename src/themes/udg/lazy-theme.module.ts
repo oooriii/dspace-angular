@@ -36,8 +36,8 @@ import { ItemPageModule } from '../../app/item-page/item-page.module';
 import { RouterModule } from '@angular/router';
 import { CommunityListPageModule } from '../../app/community-list-page/community-list-page.module';
 // theme info module + about fails
-//import { InfoModule } from '../../app/info/info.module';
-import { InfoModule } from './app/info/info.module';
+import { InfoModule } from '../../app/info/info.module';
+//import { InfoModule } from './app/info/info.module';
 
 import { StatisticsPageModule } from '../../app/statistics-page/statistics-page.module';
 import { CommunityPageModule } from '../../app/community-page/community-page.module';
@@ -62,7 +62,7 @@ import { CommunityListPageComponent } from './app/community-list-page/community-
 import { SearchPageComponent } from './app/search-page/search-page.component';
 import { ConfigurationSearchPageComponent } from './app/search-page/configuration-search-page.component';
 import { SearchFormComponent } from './app/shared/search-form/search-form.component';
-import { EndUserAgreementComponent } from './app/info/end-user-agreement/end-user-agreement.component';
+//import { EndUserAgreementComponent } from './app/info/end-user-agreement/end-user-agreement.component';
 import { PageNotFoundComponent } from './app/pagenotfound/pagenotfound.component';
 import { ObjectNotFoundComponent } from './app/lookup-by-id/objectnotfound/objectnotfound.component';
 import { ForbiddenComponent } from './app/forbidden/forbidden.component';
@@ -139,7 +139,7 @@ import {
 import { MetadataRepresentationListComponent } from './app/item-page/simple/metadata-representation-list/metadata-representation-list.component';
 import { DsDynamicLookupRelationSearchTabComponent } from './app/shared/form/builder/ds-dynamic-form-ui/relation-lookup-modal/search-tab/dynamic-lookup-relation-search-tab.component';
 import { DsDynamicLookupRelationExternalSourceTabComponent } from './app/shared/form/builder/ds-dynamic-form-ui/relation-lookup-modal/external-source-tab/dynamic-lookup-relation-external-source-tab.component';
-import { FeedbackFormComponent } from './app/info/feedback/feedback-form/feedback-form.component';
+//import { FeedbackFormComponent } from './app/info/feedback/feedback-form/feedback-form.component';
 import {
   ItemPageTitleFieldComponent
 } from './app/item-page/simple/field-components/specific-field/title/item-page-title-field.component';
@@ -178,6 +178,9 @@ import { RegisterEmailFormComponent } from './app/register-email-form/register-e
 //import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 //import { DSLeafletModule } from '../../app/core/leaflet/DSleaflet.module';
 //import { LeafletComponent } from '../../app/shared/leaflet/leaflet.component';
+import { LeafletModule } from '@bluehalo/ngx-leaflet';
+
+import { AboutComponent } from './app/info/about/about.component';
 
 const DECLARATIONS = [
   FileSectionComponent,
@@ -188,7 +191,7 @@ const DECLARATIONS = [
   SearchPageComponent,
   ConfigurationSearchPageComponent,
   SearchFormComponent,
-  EndUserAgreementComponent,
+//  EndUserAgreementComponent,
   PageNotFoundComponent,
   ObjectNotFoundComponent,
   ForbiddenComponent,
@@ -218,7 +221,7 @@ const DECLARATIONS = [
   WorkflowItemSendBackComponent,
   BreadcrumbsComponent,
   FeedbackComponent,
-  FeedbackFormComponent,
+//  FeedbackFormComponent,
   CommunityListComponent,
   ComcolPageHandleComponent,
   AuthNavMenuComponent,
@@ -266,6 +269,7 @@ const DECLARATIONS = [
   RegisterEmailFormComponent,
   // oriol
 //  LeafletComponent,
+  AboutComponent,
 ];
 
 @NgModule({
@@ -340,6 +344,7 @@ const DECLARATIONS = [
   */
  // oriol
 //DSLeafletModule,
+LeafletModule,
 
   ],
   declarations: DECLARATIONS,

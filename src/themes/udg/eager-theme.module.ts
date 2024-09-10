@@ -72,7 +72,7 @@ import { ItemPageRidFieldComponent } from './app/item-page/simple/field-componen
 import { ItemPageAuthorFieldComponent } from './app/item-page/simple/field-components/specific-field/author/item-page-author-field.component';
 
 
-import { ItemPageGeoMapFieldComponent } from './app/item-page/simple/field-components/specific-field/geolocation/item-page-geo-map-field.component';
+//import { ItemPageGeoMapFieldComponent } from './app/item-page/simple/field-components/specific-field/geolocation/item-page-geo-map-field.component';
 
 
 import { HandleTdxComponent } from './app/item-page/simple/field-components/specific-field/handle_tdx/handle_tdx.component';
@@ -86,11 +86,17 @@ import { HandleTdxComponent } from './app/item-page/simple/field-components/spec
 import { GeoMapModule } from './app/item-page/simple/field-components/specific-field/geolocation/geo-map.module';
 */
 
-import { LeafletModule } from '@bluehalo/ngx-leaflet';
+//import { LeafletModule } from '@bluehalo/ngx-leaflet';
 //import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 //import { LeafletComponent } from '../../app/shared/leaflet/leaflet.component';
 //import { DSLeafletModule } from '../../app/core/leaflet/DSleaflet.module';
+
+
+// new version - 20240910
+import { ItemPageGeoMapFieldComponent } from './app/item-page/simple/field-components/specific-field/geolocation/item-page-geo-map-field.component';
+//import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { LeafletModule } from '@bluehalo/ngx-leaflet';
 
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
@@ -189,7 +195,7 @@ LeafletModule,
 // oriol
   exports: [
 //    AgmCoreModule,
-LeafletModule,
+//LeafletModule,
   ],
 })
 /**

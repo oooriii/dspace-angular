@@ -62,11 +62,13 @@ import { CommunityListPageComponent } from './app/community-list-page/community-
 import { SearchPageComponent } from './app/search-page/search-page.component';
 import { ConfigurationSearchPageComponent } from './app/search-page/configuration-search-page.component';
 import { SearchFormComponent } from './app/shared/search-form/search-form.component';
-//import { EndUserAgreementComponent } from './app/info/end-user-agreement/end-user-agreement.component';
+import { EndUserAgreementComponent } from './app/info/end-user-agreement/end-user-agreement.component';
+//import { EndUserAgreementComponent } from '../../app/info/end-user-agreement/end-user-agreement.component';
 import { PageNotFoundComponent } from './app/pagenotfound/pagenotfound.component';
 import { ObjectNotFoundComponent } from './app/lookup-by-id/objectnotfound/objectnotfound.component';
 import { ForbiddenComponent } from './app/forbidden/forbidden.component';
 import { PrivacyComponent } from './app/info/privacy/privacy.component';
+//import { PrivacyComponent } from '../../app/info/privacy/privacy.component';
 import { CollectionStatisticsPageComponent } from './app/statistics-page/collection-statistics-page/collection-statistics-page.component';
 import { CommunityStatisticsPageComponent } from './app/statistics-page/community-statistics-page/community-statistics-page.component';
 import { ItemStatisticsPageComponent } from './app/statistics-page/item-statistics-page/item-statistics-page.component';
@@ -90,6 +92,7 @@ import { WorkflowItemDeleteComponent } from './app/workflowitems-edit-page/workf
 import { WorkflowItemSendBackComponent } from './app/workflowitems-edit-page/workflow-item-send-back/workflow-item-send-back.component';
 import { BreadcrumbsComponent } from './app/breadcrumbs/breadcrumbs.component';
 import { FeedbackComponent } from './app/info/feedback/feedback.component';
+//import { FeedbackComponent } from '../../app/info/feedback/feedback.component';
 import { CommunityListComponent } from './app/community-list-page/community-list/community-list.component';
 
 import { ComcolPageHandleComponent } from './app/shared/comcol-page-handle/comcol-page-handle.component';
@@ -139,7 +142,8 @@ import {
 import { MetadataRepresentationListComponent } from './app/item-page/simple/metadata-representation-list/metadata-representation-list.component';
 import { DsDynamicLookupRelationSearchTabComponent } from './app/shared/form/builder/ds-dynamic-form-ui/relation-lookup-modal/search-tab/dynamic-lookup-relation-search-tab.component';
 import { DsDynamicLookupRelationExternalSourceTabComponent } from './app/shared/form/builder/ds-dynamic-form-ui/relation-lookup-modal/external-source-tab/dynamic-lookup-relation-external-source-tab.component';
-//import { FeedbackFormComponent } from './app/info/feedback/feedback-form/feedback-form.component';
+import { FeedbackFormComponent } from './app/info/feedback/feedback-form/feedback-form.component';
+//import { FeedbackFormComponent } from '../../app/info/feedback/feedback-form/feedback-form.component';
 import {
   ItemPageTitleFieldComponent
 } from './app/item-page/simple/field-components/specific-field/title/item-page-title-field.component';
@@ -181,6 +185,7 @@ import { RegisterEmailFormComponent } from './app/register-email-form/register-e
 import { LeafletModule } from '@bluehalo/ngx-leaflet';
 
 import { AboutComponent } from './app/info/about/about.component';
+import { AboutContentComponent } from './app/info/about/about-content/about-content.component';
 
 const DECLARATIONS = [
   FileSectionComponent,
@@ -191,11 +196,11 @@ const DECLARATIONS = [
   SearchPageComponent,
   ConfigurationSearchPageComponent,
   SearchFormComponent,
-//  EndUserAgreementComponent,
+  //EndUserAgreementComponent,
   PageNotFoundComponent,
   ObjectNotFoundComponent,
   ForbiddenComponent,
-  PrivacyComponent,
+  //PrivacyComponent,
   CollectionStatisticsPageComponent,
   CommunityStatisticsPageComponent,
   ItemStatisticsPageComponent,
@@ -220,8 +225,8 @@ const DECLARATIONS = [
   WorkflowItemDeleteComponent,
   WorkflowItemSendBackComponent,
   BreadcrumbsComponent,
-  FeedbackComponent,
-//  FeedbackFormComponent,
+  //FeedbackComponent,
+  //FeedbackFormComponent,
   CommunityListComponent,
   ComcolPageHandleComponent,
   AuthNavMenuComponent,
@@ -269,7 +274,8 @@ const DECLARATIONS = [
   RegisterEmailFormComponent,
   // oriol
 //  LeafletComponent,
-  AboutComponent,
+  //AboutComponent,
+  //AboutContentComponent,
 ];
 
 @NgModule({
@@ -331,37 +337,28 @@ const DECLARATIONS = [
     FormModule,
     RequestCopyModule,
 
- //   AgmCoreModule,
- //   GeoMapModule,
+    LeafletModule,
 
-//    GoogleMapsModule,
-//    GoogleMap,
-  /*
-    // oriol - geomaps
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAsMcr_0zqJ0QG18Z4cx-ETuOps02jhD3g'
-    }),
-  */
- // oriol
-//DSLeafletModule,
-LeafletModule,
-
+    RouterModule.forChild([
+      {
+        path: 'info/about',
+        component: AboutComponent, // Use the AboutComponent directly
+        data: { theme: 'udg' }
+      }
+    ])
   ],
   declarations: DECLARATIONS,
   exports: [
     CommunityPageSubCollectionListComponent,
-//    AgmCoreModule,
-
   ],
-//  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 
-  /**
-   * This module serves as an index for all the components in this theme.
-   * It should import all other modules, so the compiler knows where to find any components referenced
-   * from a component in this theme
-   * It is purposefully not exported, it should never be imported anywhere else, its only purpose is
-   * to give lazily loaded components a context in which they can be compiled successfully
-   */
+/**
+ * This module serves as an index for all the components in this theme.
+ * It should import all other modules, so the compiler knows where to find any components referenced
+ * from a component in this theme
+ * It is purposefully not exported, it should never be imported anywhere else, its only purpose is
+ * to give lazily loaded components a context in which they can be compiled successfully
+ */
 class LazyThemeModule {
 }

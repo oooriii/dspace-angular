@@ -31,6 +31,13 @@ const imports = [
       resolve: { breadcrumb: I18nBreadcrumbResolver },
       data: { title: 'info.feedback.title', breadcrumbKey: 'info.feedback' },
       canActivate: [FeedbackGuard]
+    },
+    {
+      //path: 'about',
+      path: ABOUT_PATH,
+      component: AboutComponent,
+      resolve: { breadcrumb: I18nBreadcrumbResolver },
+      data: { title: 'info.about.title', breadcrumbKey: 'info.about' }
     }
   ])
 ];
@@ -69,6 +76,7 @@ RouterModule.forChild([
         }
       ]));
   }
+  /*
   imports.push(
       RouterModule.forChild([
         {
@@ -78,13 +86,15 @@ RouterModule.forChild([
           data: { title: 'info.about.title', breadcrumbKey: 'info.about' }
         }
     ]));
+    */
 
 
 
 @NgModule({
   imports: [
     ...imports
-  ]
+  ],
+  exports: [RouterModule]
 })
 /**
  * Module for navigating to components within the info module

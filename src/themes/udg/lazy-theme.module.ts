@@ -36,8 +36,9 @@ import { ItemPageModule } from '../../app/item-page/item-page.module';
 import { RouterModule } from '@angular/router';
 import { CommunityListPageModule } from '../../app/community-list-page/community-list-page.module';
 // theme info module + about fails
-import { InfoModule } from '../../app/info/info.module';
-//import { InfoModule } from './app/info/info.module';
+//import { InfoModule } from '../../app/info/info.module';
+import { InfoModule } from './app/info/info.module';
+
 import { StatisticsPageModule } from '../../app/statistics-page/statistics-page.module';
 import { CommunityPageModule } from '../../app/community-page/community-page.module';
 import { CollectionPageModule } from '../../app/collection-page/collection-page.module';

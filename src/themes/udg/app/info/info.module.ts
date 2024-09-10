@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../../../app/shared/shared.module';
-
+// main module
+import { InfoModule as MainInfoModule } from '../../../../app/info/info.module';
 import { InfoRoutingModule } from './info-routing.module';
 
+/*
 import { EndUserAgreementComponent } from '../../../../app/info/end-user-agreement/end-user-agreement.component';
 import { EndUserAgreementContentComponent } from '../../../../app/info/end-user-agreement/end-user-agreement-content/end-user-agreement-content.component';
 import { PrivacyComponent } from '../../../../app/info/privacy/privacy.component';
@@ -17,7 +19,7 @@ import { FeedbackFormComponent } from '../../../../app/info/feedback/feedback-fo
 //import { ThemedFeedbackFormComponent } from '../../../../app/info/feedback/feedback-form/themed-feedback-form.component';
 //import { ThemedFeedbackComponent } from '../../../../app/info/feedback/themed-feedback.component';
 import { FeedbackGuard } from '../../../../app/core/feedback/feedback.guard';
-
+*/
 import { AboutComponent } from './about/about.component';
 import { AboutContentComponent } from './about/about-content/about-content.component';
 
@@ -43,6 +45,7 @@ AboutContentComponent
     CommonModule,
     SharedModule,
     InfoRoutingModule,
+    MainInfoModule, // Import the main InfoModule
   ],
   declarations: [
     ...DECLARATIONS
@@ -50,7 +53,7 @@ AboutContentComponent
   exports: [
     ...DECLARATIONS
   ],
-  providers: [FeedbackGuard]
+//  providers: [FeedbackGuard]
 })
 
 export class InfoModule{

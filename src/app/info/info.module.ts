@@ -25,7 +25,8 @@ const DECLARATIONS = [
   FeedbackComponent,
   FeedbackFormComponent,
   ThemedFeedbackFormComponent,
-  ThemedFeedbackComponent
+  ThemedFeedbackComponent,
+
 ];
 
 @NgModule({

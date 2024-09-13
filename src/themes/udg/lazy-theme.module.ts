@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-//import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { AdminRegistriesModule } from '../../app/admin/admin-registries/admin-registries.module';
@@ -33,7 +32,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { HomePageModule } from '../../app/home-page/home-page.module';
 import { AppModule } from '../../app/app.module';
 import { ItemPageModule } from '../../app/item-page/item-page.module';
-import { RouterModule } from '@angular/router';
+//import { RouterModule } from '@angular/router';
 import { CommunityListPageModule } from '../../app/community-list-page/community-list-page.module';
 // theme info module + about fails
 import { InfoModule } from '../../app/info/info.module';
@@ -186,6 +185,11 @@ import { LeafletModule } from '@bluehalo/ngx-leaflet';
 
 import { AboutComponent } from './app/info/about/about.component';
 import { AboutContentComponent } from './app/info/about/about-content/about-content.component';
+import { RouterModule, Routes, Router } from '@angular/router';
+import { I18nBreadcrumbResolver } from '../../app/core/breadcrumbs/i18n-breadcrumb.resolver';
+
+import { AboutRoutingModule } from './app/info/about-routing.module';
+
 
 const DECLARATIONS = [
   FileSectionComponent,
@@ -278,8 +282,21 @@ const DECLARATIONS = [
   //AboutContentComponent,
 ];
 
+
+const routes: Routes = [
+  {
+    path: 'about',
+    loadChildren: () => import('./app/info/about-routing.module').then(m => m.AboutRoutingModule)
+  },
+  // other routes...
+];
+
+
 @NgModule({
   imports: [
+    // oriol kk
+    RouterModule.forChild(routes),
+
     AdminRegistriesModule,
     AdminSearchModule,
     AdminWorkflowModuleModule,
@@ -339,13 +356,10 @@ const DECLARATIONS = [
 
     LeafletModule,
 
-    RouterModule.forChild([
-      {
-        path: 'info/about',
-        component: AboutComponent, // Use the AboutComponent directly
-        data: { theme: 'udg' }
-      }
-    ])
+    AboutRoutingModule,
+
+
+
   ],
   declarations: DECLARATIONS,
   exports: [
@@ -360,5 +374,4 @@ const DECLARATIONS = [
  * It is purposefully not exported, it should never be imported anywhere else, its only purpose is
  * to give lazily loaded components a context in which they can be compiled successfully
  */
-class LazyThemeModule {
-}
+class LazyThemeModule {}

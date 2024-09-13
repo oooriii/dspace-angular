@@ -45,6 +45,9 @@ import { ThemedPageErrorComponent } from './page-error/themed-page-error.compone
 // oriol -geomap
 import { AgmCoreModule } from '@agm/core';
 */
+// oriol xapussa
+import { AboutComponent } from '../themes/udg/app/info/about/about.component';
+import { AboutRoutingModule } from '../themes/udg/app/info/about-routing.module';
 
 
 @NgModule({
@@ -242,6 +245,16 @@ import { AgmCoreModule } from '@agm/core';
             loadChildren: () => import('./subscriptions-page/subscriptions-page-routing.module')
               .then((m) => m.SubscriptionsPageRoutingModule),
             canActivate: [AuthenticatedGuard]
+          },
+          // oriol 
+          {
+            path: 'about',
+            component: AboutComponent
+          },
+          // oriol
+          {
+            path: 'more-info',
+            loadChildren: () => import('../themes/udg/app/info/about-routing.module').then((m) => m.AboutRoutingModule)
           },
           { path: '**', pathMatch: 'full', component: ThemedPageNotFoundComponent },
         ]

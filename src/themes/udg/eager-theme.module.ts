@@ -98,6 +98,8 @@ import { ItemPageGeoMapFieldComponent } from './app/item-page/simple/field-compo
 //import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { LeafletModule } from '@bluehalo/ngx-leaflet';
 
+
+//import { AboutRoutingModule } from './app/info/about-routing.module';
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
  * This will ensure that decorator gets picked up when the app loads
@@ -187,6 +189,10 @@ ItemPageGeoMapFieldComponent,
 // oriol
 //DSLeafletModule,
 LeafletModule,
+
+
+//AboutRoutingModule,
+
   ],
   declarations: DECLARATIONS,
   providers: [

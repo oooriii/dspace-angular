@@ -8,7 +8,6 @@ import { ThemedFeedbackComponent } from './feedback/themed-feedback.component';
 import { FeedbackGuard } from '../core/feedback/feedback.guard';
 import { environment } from '../../environments/environment';
 
-import { AboutComponent } from '../../themes/udg/app/info/about/about.component';
 
 const imports = [
 RouterModule.forChild([
@@ -19,14 +18,6 @@ RouterModule.forChild([
     data: { title: 'info.feedback.title', breadcrumbKey: 'info.feedback' },
     canActivate: [FeedbackGuard]
   },
-  /*
-  {
-    path: 'about',
-    component: AboutComponent,
-    resolve: { breadcrumb: I18nBreadcrumbResolver },
-    data: { title: 'info.about.title', breadcrumbKey: 'info.about' },
-  },
-  */
 ]
 )
 ];

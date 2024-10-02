@@ -10,6 +10,10 @@ import {
 } from '../../../../../../../app/item-page/simple/item-types/untyped-item/untyped-item.component';
 
 
+import { ItemPageGeoMapFieldComponent } from '../../field-components/specific-field/geolocation/item-page-geo-map-field.component';
+
+import { MapComponent } from '../../field-components/specific-field/geolocation/map.component';
+
 /**
  * Component that represents an untyped Item page
  */

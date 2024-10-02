@@ -1,15 +1,21 @@
-import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
+/// <reference types="leaflet" />
 import * as L from 'leaflet';
+import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
+
 import { Item } from '../../../../../../../../app/core/shared/item.model';
-import { LeafletModule } from '@bluehalo/ngx-leaflet';
-import { latLng, tileLayer } from 'leaflet';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+//import { latLng, tileLayer, MapOptions } from 'leaflet';
+import { TranslateModule } from '@ngx-translate/core';
+
+import { JsonPipe } from '@angular/common';
+
 
 @Component({
   selector: 'ds-item-page-geo-map-field',
   templateUrl: './item-page-geo-map-field.component.html',
   styleUrls: ['./item-page-geo-map-field.component.scss'],
-//  standalone: true,
-  imports: [LeafletModule]
+  standalone: true,
+  imports: [LeafletModule, TranslateModule, JsonPipe]
 })
 //export class ItemPageGeoMapFieldComponent implements OnInit, AfterViewInit {
 export class ItemPageGeoMapFieldComponent implements OnInit {
@@ -48,19 +54,20 @@ export class ItemPageGeoMapFieldComponent implements OnInit {
     return [];
   } 
 */
-options: any;
+options: L.MapOptions;
 
 ngOnInit() {
   this.options = {
     layers: [
-      tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
-        attribution: '...'
+        attribution: '© OpenStreetMap contributors'
       })
     ],
     zoom: 5,
-    center: latLng(46.879966, -121.726909)
+    center: L.latLng(46.879966, -121.726909)
   };
 }
+
 
 }

@@ -181,7 +181,8 @@ import { RegisterEmailFormComponent } from './app/register-email-form/register-e
 //import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 //import { DSLeafletModule } from '../../app/core/leaflet/DSleaflet.module';
 //import { LeafletComponent } from '../../app/shared/leaflet/leaflet.component';
-import { LeafletModule } from '@bluehalo/ngx-leaflet';
+//import { LeafletModule } from '@bluehalo/ngx-leaflet';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 import { AboutComponent } from './app/info/about/about.component';
 import { AboutContentComponent } from './app/info/about/about-content/about-content.component';
@@ -189,6 +190,8 @@ import { RouterModule, Routes, Router } from '@angular/router';
 import { I18nBreadcrumbResolver } from '../../app/core/breadcrumbs/i18n-breadcrumb.resolver';
 
 import { AboutRoutingModule } from './app/info/about-routing.module';
+
+//import { MapComponent } from './app/item-page/simple/field-components/specific-field/geolocation/map.component';
 
 
 const DECLARATIONS = [
@@ -280,23 +283,14 @@ const DECLARATIONS = [
 //  LeafletComponent,
   //AboutComponent,
   //AboutContentComponent,
+ // MapComponent,
 ];
 
 
-const routes: Routes = [
-  {
-    path: 'about',
-    loadChildren: () => import('./app/info/about-routing.module').then(m => m.AboutRoutingModule)
-  },
-  // other routes...
-];
 
 
 @NgModule({
   imports: [
-    // oriol kk
-    RouterModule.forChild(routes),
-
     AdminRegistriesModule,
     AdminSearchModule,
     AdminWorkflowModuleModule,
@@ -364,6 +358,7 @@ const routes: Routes = [
   declarations: DECLARATIONS,
   exports: [
     CommunityPageSubCollectionListComponent,
+  // MapComponent,
   ],
 })
 
@@ -375,3 +370,4 @@ const routes: Routes = [
  * to give lazily loaded components a context in which they can be compiled successfully
  */
 class LazyThemeModule {}
+

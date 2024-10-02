@@ -10,9 +10,9 @@
     {{ geo.value }}
   </div>
   -->
-  <div>
+  <pre>
     {{ geoData | json }}
-  </div>
+  </pre>
 </div>
 <!--
 <div class="item-page-field item-page-author-field">
@@ -90,9 +90,16 @@ leaflet
 
 <div 
 leaflet 
-class="mapa" style="height: 300px;"
->
+class="mapa" style="height: 300px;">
 </div>
+
+<!--
+<div class="map-container">
+  <div leaflet style="height: 300px;"
+       [leafletOptions]="options">
+  </div>
+</div>
+-->
 
 
 

@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../app/shared/shared.module';
+//import { HomeNewsComponent } from '../../app/home-page/home-news/home-news.component';
 import { HomeNewsComponent } from './app/home-page/home-news/home-news.component';
+
+
 import { NavbarComponent } from './app/navbar/navbar.component';
 import { SearchNavbarComponent } from './app/search-navbar/search-navbar.component';
 import { HeaderComponent } from './app/header/header.component';
@@ -57,6 +60,7 @@ import {
   ItemSearchResultListElementComponent
 } from './app/shared/object-list/search-result-list-element/item-search-result/item-types/item/item-search-result-list-element.component';
 import { TopLevelCommunityListComponent } from './app/home-page/top-level-community-list/top-level-community-list.component';
+//import { TopLevelCommunityListComponent } from './app/home-page/top-level-community-list/top-level-community-list.component';
 import { LogInComponent } from './app/shared/log-in/log-in.component';
 import { BrowseEntryListElementComponent } from './app/shared/object-list/browse-entry-list-element/browse-entry-list-element.component';
 import { PersonComponent } from './app/entity-groups/research-entities/item-pages/person/person.component';
@@ -95,9 +99,10 @@ import { GeoMapModule } from './app/item-page/simple/field-components/specific-f
 
 // new version - 20240910
 import { ItemPageGeoMapFieldComponent } from './app/item-page/simple/field-components/specific-field/geolocation/item-page-geo-map-field.component';
-//import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { LeafletModule } from '@bluehalo/ngx-leaflet';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+//import { LeafletModule } from '@bluehalo/ngx-leaflet';
 
+import { MapComponent } from './app/item-page/simple/field-components/specific-field/geolocation/map.component';
 
 //import { AboutRoutingModule } from './app/info/about-routing.module';
 /**
@@ -127,6 +132,7 @@ const ENTRY_COMPONENTS = [
 ThesisComponent,
 HandleTdxComponent,
 
+MapComponent,
 ];
 
 const DECLARATIONS = [
@@ -152,10 +158,14 @@ ItemPageScopusidFieldComponent,
 
 ItemPageAuthorFieldComponent,
 
-ItemPageGeoMapFieldComponent,
+//ItemPageGeoMapFieldComponent,
 
 ];
 
+const STANDALONE_COMPONENTS = [
+  ItemPageGeoMapFieldComponent,
+  // Add other standalone components here if any
+];
 
 
 @NgModule({
@@ -192,7 +202,8 @@ LeafletModule,
 
 
 //AboutRoutingModule,
-
+// standalone components
+...STANDALONE_COMPONENTS,
   ],
   declarations: DECLARATIONS,
   providers: [
@@ -202,6 +213,7 @@ LeafletModule,
   exports: [
 //    AgmCoreModule,
 //LeafletModule,
+MapComponent,
   ],
 })
 /**

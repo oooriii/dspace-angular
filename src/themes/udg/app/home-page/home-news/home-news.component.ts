@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HomeNewsComponent as BaseComponent } from '../../../../../app/home-page/home-news/home-news.component';
 
 @Component({
@@ -12,5 +12,22 @@ import { HomeNewsComponent as BaseComponent } from '../../../../../app/home-page
 /**
  * Component to render the news section on the home page
  */
-export class HomeNewsComponent extends BaseComponent {}
+export class HomeNewsComponent implements OnInit {
+  images: string[] = [
+    '/assets/udg/images/banner/claustre_udg.jpg',
+    '/assets/udg/images/banner/dret.jpg',
+    '/assets/udg/images/banner/girona.jpg',
+    '/assets/udg/images/banner/lletres.jpg'
+  ];
+  selectedImage: string;
 
+
+  ngOnInit(): void {
+    this.setRandomImage();
+  }
+
+  setRandomImage(): void {
+    const randomIndex = Math.floor(Math.random() * this.images.length);
+    this.selectedImage = this.images[randomIndex];
+  }
+}

@@ -1,5 +1,30 @@
+# NOTE: will log all redux actions and transfers in console
+#debug: false
+debug: true
+
+# Angular Universal server settings
+# NOTE: these settings define where Node.js will start your UI application. Therefore, these
+# "ui" settings usually specify a localhost port/URL which is later proxied to a public URL (using Apache or similar)
+ui:
+  ssl: false
+  host: localhost
+  port: 4000
+  # NOTE: Space is capitalized because 'namespace' is a reserved string in TypeScript
+  nameSpace: /
+  # The rateLimiter settings limit each IP to a 'max' of 500 requests per 'windowMs' (1 minute).
+  rateLimiter:
+    windowMs: 60000 # 1 minute
+    max: 500 # limit each IP to 500 requests per windowMs
+  # Trust X-FORWARDED-* headers from proxies (default = true)
+  useProxies: true
+
+# The REST API server settings
+# NOTE: these settings define which (publicly available) REST API to use. They are usually
+# 'synced' with the 'dspace.server.url' setting in your backend's local.cfg.
 rest:
   ssl: true
-  host: demo.dspace.org
+  #host: bibliodev.udg.edu
+  host: dipositpre.ub.edu
+  #host: api.dspacepre.ub.edu
   port: 443
   nameSpace: /server

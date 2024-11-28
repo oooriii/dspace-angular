@@ -10,4 +10,7 @@ import { HeaderComponent as BaseComponent } from '../../../../app/header/header.
   templateUrl:'header.component.html',
 })
 export class HeaderComponent extends BaseComponent {
+  ngOnInit() {
+    console.log('HeaderComponent');
+  }
 }

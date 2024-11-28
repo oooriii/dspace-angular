@@ -1,0 +1,12 @@
+<div class="item-page-field item-page-author-field">
+    <h2 class="simple-view-element-header">{{ label | translate }}</h2>
+
+    <div *ngFor="let aut of item?.allMetadata(fields); index as i" class="simple-view-element">
+            <a [href]="genBrowseUri(aut.value, aut.authority)" class="dont-break-out ng-star-inserted">{{ aut.value }}</a>
+            {{hasORCID(i, aut.authority)}}
+            <a *ngIf="orcids[i]" [href]="prefix_orcid+orcids[i].orcid_id" target="_blank" [title]="'orcid['+aut.value+']:'+orcids[i].orcid_id">
+                <img [src]="img_src_orcid" [alt]="'orcid['+aut.value+']:'+orcids[i].orcid_id"/>
+            </a>
+    </div>
+
+ </div>

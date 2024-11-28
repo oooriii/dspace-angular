@@ -1,0 +1,29 @@
+:host {
+    div.item-page-field.item-page-author-field{
+        margin-bottom: 1rem;
+        h2{
+            font-size: 1.2rem;
+        }
+        .simple-view-element{
+            /*
+            display: inline-block;
+            */
+            display: block;
+            
+            margin-right: 5px;
+            a{
+                display: inline-block;
+                img {
+                    padding-left: 5px;
+                    margin-top: -2px;
+                    max-width: 30px;
+                    width: 30px;
+                    /*
+                    height: 25px;
+                    */
+                }
+            }
+        }
+
+    }
+}

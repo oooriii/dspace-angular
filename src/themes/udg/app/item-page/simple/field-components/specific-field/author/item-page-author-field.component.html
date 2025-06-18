@@ -1,0 +1,48 @@
+<div class="item-page-field item-page-author-field">
+    <h2 class="simple-view-element-header">{{ label | translate }}</h2>
+    <div *ngFor="let person of persons | keyvalue" class="simple-view-element">
+        <!--
+        <pre>{{ person.key }} :: {{ person.value.name }} :: {{ person.value.url }}</pre>
+        -->
+    <!--
+        <pre>{{ person.value | json }}</pre>
+        <pre>{{ person.value.rid }}</pre>
+    -->
+        <a [href]="person.value.url" class="dont-break-out ng-star-inserted">{{ person.value.name }}</a>
+        <a *ngIf="person.value.hasOwnProperty('orcid')" [href]="prefix_orcid+person.value.orcid" target="_blank" [title]="'orcid[ '+person.value.name+' ]: '+person.value.orcid">
+            <img [src]="img_src_orcid" [alt]="'orcid['+person.value.name+']:'+person.value.orcid"/>
+        </a>
+        <a *ngIf="person.value.hasOwnProperty('rid')" [href]="prefix_wos+person.value.rid" target="_blank" [title]="'rid[ '+person.value.name+' ]: '+person.value.rid">
+            <img [src]="img_src_wos" [alt]="'rid['+person.value.name+']:'+person.value.rid"/>
+        </a>
+        <a *ngIf="person.value.hasOwnProperty('scopusid')" [href]="prefix_scopus+person.value.scopusid" target="_blank" [title]="'scopusid[ '+person.value.name+' ]: '+person.value.scopusid">
+            <img [src]="img_src_scopus" [alt]="'scopusid['+person.value.name+']:'+person.value.scopusid"/>
+        </a>     
+    </div>
+    <div *ngFor="let aut of item?.allMetadata(fields); index as i" class="simple-view-element">
+        <span *ngIf="! virtual(aut)">
+            <a [href]="genBrowseUri(aut.value, aut.authority)" class="dont-break-out ng-star-inserted">{{ aut.value }}</a>
+            {{hasORCID(i, aut.authority)}}
+            <a *ngIf="orcids[i]" [href]="prefix_orcid+orcids[i].orcid_id" target="_blank" [title]="'orcid['+aut.value+']:'+orcids[i].orcid_id">
+                <img [src]="img_src_orcid" [alt]="'orcid['+aut.value+']:'+orcids[i].orcid_id"/>
+            </a>
+        </span>
+        <!-- virtuals - person -->
+<!--
+        <span *ngIf="virtual(aut)">
+            <a [href]="genBrowseUri(aut.value, aut.authority)" class="dont-break-out ng-star-inserted">VIRTUAL{{ aut.value }}</a>
+-->         
+<!--
+            relations: <pre>{{ getPersonId(aut, item?.allMetadata(['relation.isAuthorOfPublication']))}}</pre>
+-->
+<!--
+        </span>
+    -->
+    </div>
+
+<!--
+    <div *ngFor="let rel of item?.allMetadata(['relation.isAuthorOfPublication']); index as i" class="simple-view-element">
+        {{ rel.authority }} - {{ rel.value }}
+    </div>
+-->
+ </div>

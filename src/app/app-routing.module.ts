@@ -41,6 +41,15 @@ import { ServerCheckGuard } from './core/server-check/server-check.guard';
 import { MenuResolver } from './menu.resolver';
 import { ThemedPageErrorComponent } from './page-error/themed-page-error.component';
 
+/*
+// oriol -geomap
+import { AgmCoreModule } from '@agm/core';
+*/
+// oriol xapussa
+import { AboutComponent } from '../themes/udg/app/info/about/about.component';
+import { AboutRoutingModule } from '../themes/udg/app/info/about-routing.module';
+
+
 @NgModule({
   imports: [
     RouterModule.forRoot([
@@ -237,9 +246,26 @@ import { ThemedPageErrorComponent } from './page-error/themed-page-error.compone
               .then((m) => m.SubscriptionsPageRoutingModule),
             canActivate: [AuthenticatedGuard]
           },
+          // oriol 
+          {
+            path: 'about',
+            component: AboutComponent
+          },
+          // oriol
+          {
+            path: 'more-info',
+            loadChildren: () => import('../themes/udg/app/info/about-routing.module').then((m) => m.AboutRoutingModule)
+          },
           { path: '**', pathMatch: 'full', component: ThemedPageNotFoundComponent },
         ]
-      }
+    }
+/*
+      },
+  // oriol - geomaps
+  AgmCoreModule.forRoot({
+    apiKey: 'AIzaSyAsMcr_0zqJ0QG18Z4cx-ETuOps02jhD3g'
+  }),
+*/
     ], {
       // enableTracing: true,
       useHash: false,

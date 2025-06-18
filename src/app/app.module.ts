@@ -31,6 +31,15 @@ import { APP_CONFIG, AppConfig } from '../config/app-config.interface';
 import { StoreDevModules } from '../config/store/devtools';
 import { RootModule } from './root.module';
 
+
+// oriol -geomap
+//import { AgmCoreModule } from '@agm/core';
+
+//import { GoogleMap } from '@angular/google-maps';
+//import { GoogleMap, GoogleMapsModule } from '@angular/google-maps';
+//import { LeafletModule } from '@bluehalo/ngx-leaflet';
+//import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+
 export function getConfig() {
   return environment;
 }
@@ -61,6 +70,19 @@ const IMPORTS = [
   StoreDevModules,
   EagerThemesModule,
   RootModule,
+
+/*
+  // oriol - geomaps
+  AgmCoreModule.forRoot({
+    apiKey: 'AIzaSyBWDbF9yvULTicihVVz-p-Moia6SuYgNlc'
+  }),
+*/
+// oriol geomaps
+/*
+GoogleMap,
+GoogleMapsModule,
+*/
+//LeafletModule,
 ];
 
 const PROVIDERS = [

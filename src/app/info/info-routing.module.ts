@@ -10,16 +10,18 @@ import { environment } from '../../environments/environment';
 
 
 const imports = [
-  RouterModule.forChild([
-    {
-      path: FEEDBACK_PATH,
-      component: ThemedFeedbackComponent,
-      resolve: { breadcrumb: I18nBreadcrumbResolver },
-      data: { title: 'info.feedback.title', breadcrumbKey: 'info.feedback' },
-      canActivate: [FeedbackGuard]
-    }
-  ])
+RouterModule.forChild([
+  {
+    path: FEEDBACK_PATH,
+    component: ThemedFeedbackComponent,
+    resolve: { breadcrumb: I18nBreadcrumbResolver },
+    data: { title: 'info.feedback.title', breadcrumbKey: 'info.feedback' },
+    canActivate: [FeedbackGuard]
+  },
+]
+)
 ];
+
 
   if (environment.info.enableEndUserAgreement) {
     imports.push(
@@ -43,6 +45,7 @@ const imports = [
         }
       ]));
   }
+
 
 @NgModule({
   imports: [

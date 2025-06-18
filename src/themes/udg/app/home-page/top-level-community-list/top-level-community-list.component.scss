@@ -1,0 +1,83 @@
+.color-1 {
+  background-image: url('/udg/assets/images/theses.webm');
+  background-size: cover;
+  background-position: center;
+}
+
+.color-2 {
+  background-image: url('/assets/udg/images/research.webm');
+  background-size: cover;
+  background-position: center;
+}
+
+.color-3 {
+  background-image: url('/assets/images/teaching.webm');
+  background-size: cover;
+  background-position: center;
+}
+
+.color-4 {
+  background-image: url('/assets/images/dataset.webm');
+  background-size: cover;
+  background-position: center;
+}
+
+.color-5 {
+  background-image: url('/assets/images/theses.webm');
+  background-size: cover;
+  background-position: center;
+}
+
+.color-6 {
+  background-image: url('/assets/images/theses.webm');
+  background-size: cover;
+  background-position: center;
+}
+
+.top-level-community-block {
+  //height: 180px;
+  height: 300px;
+  flex: 1 1 180px; /* This allows the block to be flexible in width */
+  margin: 10px;
+  //padding: 10px;
+  padding: 0;
+  border: 1px solid #000;
+  position: relative; /* Added to position the h3 element */
+  background-size: cover; /* Ensures the background image covers the entire block */
+  background-position: center; /* Centers the background image */
+  transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+  //hiden text
+  //text-indent: -9999px;
+  overflow: hidden;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05); /* Zoom in effect */
+  }
+  
+  .top-level-community-block-link {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    height: 100%;
+    width: 100%;
+    h3 {
+      margin: 0;
+      padding: 0;
+      position: absolute; /* Positioning the h3 element */
+      //bottom: 10px; /* Moving it to the bottom */
+      bottom: 20px; /* Moving it to the bottom */
+      //right: 10px; /* Moving it to the right */
+      right: 20px; /* Moving it to the right */
+      background-color: #fff; /* Setting the background to white */
+      padding: 5px; /* Adding some padding for better appearance */
+    }
+  }
+}
+
+.block-image {
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensures no extra space below the image */
+}

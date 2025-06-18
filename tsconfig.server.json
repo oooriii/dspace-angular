@@ -5,7 +5,8 @@
     "target": "ES2022",
     "types": [
       "node",
-      "grecaptcha"
+      "grecaptcha",
+      "leaflet"
     ]
   },
   "files": [

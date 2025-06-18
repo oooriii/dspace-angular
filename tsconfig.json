@@ -24,7 +24,7 @@
     "target": "ES2022",
     "typeRoots": [
       "node_modules/@types",
-      "src/typings.d.ts"
+      "src/typings.d.ts",
     ],
     "lib": [
       "dom",
@@ -38,9 +38,11 @@
     ],
     "types": [
       "node",
-      "jasmine"
+      "jasmine",
+      "leaflet"
     ],
-    "useDefineForClassFields": false
+    "useDefineForClassFields": false,
+    "skipLibCheck": true,
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

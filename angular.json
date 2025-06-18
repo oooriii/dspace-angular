@@ -26,6 +26,7 @@
             },
             "allowedCommonJsDependencies": [
               "cerialize",
+              "leaflet",
               "core-js",
               "lodash",
               "jwt-decode",
@@ -40,8 +41,14 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
+              "src/favicon.ico",
               "src/assets",
-              "src/robots.txt"
+              "src/robots.txt",
+              {
+                "glob": "**/*",
+                "input": "node_modules/leaflet/dist/images",
+                "output": "assets/leaflet/images"
+              }
             ],
             "styles": [
               "src/styles/startup.scss",
@@ -51,15 +58,16 @@
                 "bundleName": "base-theme"
               },
               {
-                "input": "src/themes/custom/styles/theme.scss",
-                "inject": false,
-                "bundleName": "custom-theme"
-              },
-              {
                 "input": "src/themes/dspace/styles/theme.scss",
                 "inject": false,
                 "bundleName": "dspace-theme"
-              }
+              },
+              {
+                "input": "src/themes/udg/styles/theme.scss",
+                "inject": false,
+                "bundleName": "udg-theme"
+              },
+              "node_modules/leaflet/dist/leaflet.css"
             ],
             "scripts": [],
             "baseHref": "/"

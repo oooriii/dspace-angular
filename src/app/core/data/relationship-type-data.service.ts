@@ -67,8 +67,14 @@ export class RelationshipTypeDataService extends BaseDataService<RelationshipTyp
                  getFirstSucceededRemoteData(),
                  // Emit each type in the page array separately
                  switchMap((typeListRD: RemoteData<PaginatedList<RelationshipType>>) => typeListRD.payload.page),
+                 
                  // Check each type individually, to see if it matches the provided types
                  mergeMap((relationshipType: RelationshipType) => {
+                   //console.log('*****### relationshipType:', relationshipType, 'leftwardType:', relationshipType.leftwardType, 'label:', relationshipTypeLabel);
+                   //console.log('*****@@@ :' + relationshipTypeLabel + '#');
+                   //console.log('*****@@@ :' +  relationshipType.leftwardType + '#');
+                   
+
                    if (relationshipType.leftwardType === relationshipTypeLabel) {
                      return this.checkType(relationshipType, firstItemType, secondItemType);
                    } else if (relationshipType.rightwardType === relationshipTypeLabel) {
@@ -76,13 +82,17 @@ export class RelationshipTypeDataService extends BaseDataService<RelationshipTyp
                    } else {
                      return [null];
                    }
+                  
+
                  }),
                  // Wait for all types to be checked and emit once, with the results combined back into an
                  // array
                  toArray(),
                  // Look for a match in the array and emit it if found, or null if one isn't found
                  map((types: RelationshipType[]) => {
+                   //console.log('*****### types:', types);
                    const match = types.find((type: RelationshipType) => hasValue(type));
+                   //console.log('*****### match:', match);
                    if (hasValue(match)) {
                      return match;
                    } else {
@@ -107,10 +117,17 @@ export class RelationshipTypeDataService extends BaseDataService<RelationshipTyp
       type.rightType.pipe(getFirstCompletedRemoteData())
     ]).pipe(
       map(([leftTypeRD, rightTypeRD]: [RemoteData<ItemType>, RemoteData<ItemType>]) => {
-        if (checkSide(leftTypeRD, leftItemType) && checkSide(rightTypeRD, rightItemType)
-        ) {
+        // Log the RemoteData objects for debugging
+        //console.log('******QQQQ leftTypeRD:', leftTypeRD);
+        //console.log('******QQQQ rightTypeRD:', rightTypeRD);
+        
+        if (checkSide(leftTypeRD, leftItemType) && checkSide(rightTypeRD, rightItemType)) {
+          // Log the successful match
+          //console.log('******QQQQ Match found for type:', type);
           return type;
         } else {
+          // Log the unsuccessful match
+          //console.log('******QQQQ No match found for type:', type);
           return null;
         }
       })

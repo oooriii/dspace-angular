@@ -1,0 +1,68 @@
+<!--
+<div class="background-image-container mt-ncs">
+    <div class="container">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="d-flex flex-wrap">
+          <div>
+            <h1 class="display-3">DSpace 7</h1>
+            <p class="lead">DSpace is the world leading open source repository platform that enables
+              organisations to:</p>
+          </div>
+        </div>
+        <ul>
+          <li>easily ingest documents, audio, video, datasets and their corresponding Dublin Core
+            metadata
+          </li>
+          <li>open up this content to local and global audiences, thanks to the OAI-PMH interface and
+            Google Scholar optimizations
+          </li>
+          <li>issue permanent urls and trustworthy identifiers, including optional integrations with
+            handle.net and DataCite DOI
+          </li>
+        </ul>
+        <p>Join an international community of <a href="https://wiki.lyrasis.org/display/DSPACE/DSpace+Positioning" target="_blank">leading institutions using DSpace</a>.</p>
+        <p>The test user accounts below have their password set to the name of this
+          software in lowercase.</p>
+        <ul>
+          <li>Demo Site Administrator = dspacedemo+admin@gmail.com</li>
+          <li>Demo Community Administrator = dspacedemo+commadmin@gmail.com</li>
+          <li>Demo Collection Administrator = dspacedemo+colladmin@gmail.com</li>
+          <li>Demo Submitter = dspacedemo+submit@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <picture class="background-image">
+      <source type="image/webp" srcset="assets/dspace/images/banner.webp 2000w, assets/dspace/images/banner-half.webp 1200w, assets/dspace/images/banner-tall.webp 768w">
+      <source type="image/jpg" srcset="assets/dspace/images/banner.jpg 2000w, assets/dspace/images/banner-half.jpg 1200w, assets/dspace/images/banner-tall.jpg 768w">
+      <img alt="" [src]="'assets/dspace/images/banner.jpg'"/>
+    -->
+      <!-- without the []="''" Firefox downloads both the fallback and the resolved image -->
+      <!--
+    </picture>
+    <small class="credits">Photo by <a href="https://www.pexels.com/@inspiredimages">@inspiredimages</a></small>
+  </div>
+    -->
+<div class="background-image-container mt-ncs" [ngStyle]="{'background-image': 'url(' + selectedImage + ')'}">
+    <div class="container">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="d-flex flex-wrap">
+          <div>
+            <h1 class="display-5">DUGiDocs</h1>
+            <p class="lead">El DUGiDocs és el repositori institucional de la Universitat de Girona.</p>
+            <p>El DUGiDocs és el repositori institucional de la Universitat de Girona. S'ocupa de preservar, difondre i donar visibilitat a la producció intel·lectual producte de l'activitat de recerca, de docència i institucional de la UdG, els treballs finals de grau, de màster i els treballs de recerca de doctorat dels estudiants de la Universitat i a les revistes científiques. També incorpora les eines d'indexació i descripció dels continguts, en facilita la visualització des de molts altres llocs d'internet (interoperabilitat) i l'accés obert.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <picture class="background-image">
+    <!--
+        <source type="image/webp" srcset="assets/dspace/images/banner.webp 2000w, assets/dspace/images/banner-half.webp 1200w, assets/dspace/images/banner-tall.webp 768w">
+        <source type="image/jpg" srcset="assets/dspace/images/banner.jpg 2000w, assets/dspace/images/banner-half.jpg 1200w, assets/dspace/images/banner-tall.jpg 768w">
+        <img alt="" [src]="'assets/dspace/images/banner.jpg'"/>
+        -->
+        <source type="image/webp" [srcset]="selectedImage.replace('.jpg', '.webp')">
+        <source type="image/jpg" [srcset]="selectedImage">
+        <img alt="Random Image" [src]="selectedImage"/>
+      </picture>
+</div>
+

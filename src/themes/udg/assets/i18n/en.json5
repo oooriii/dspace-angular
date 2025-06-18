@@ -9,4 +9,7 @@
 
   // geolocation
   "item.page.geomap": "Location",
+  "item.page.geomap.locations": "Locations",
+  "item.page.geomap.location": "Location",
+  "item.page.geomap.coordinates": "Coordinates",
 }

@@ -1,0 +1,105 @@
+<!--
+<div *ngIf="item?.firstMetadataValue(fields)" class="item-page-field-orcid">
+  <a class="item-page-field-orcid" [href]="prefix + '/' + item?.firstMetadataValue(fields)" target="_blank" [title]="'ORCID ' + author + ' : ' + item?.firstMetadataValue(fields)"><img [src]="img_src" [alt]="'ORCID ' + author + ' : ' +  item?.firstMetadataValue(fields)"/></a>
+</div>
+-->
+<div *ngIf="item?.firstMetadataValue(fields)" class="item-page-field">
+  <h2 class="simple-view-element-header">{{ label | translate }}</h2>
+  <!--
+  <div *ngFor="let geo of item?.allMetadata(fields); index as i" class="simple-view-element">
+    {{ geo.value }}
+  </div>
+  -->
+  <pre>
+    {{ geoData | json }}
+  </pre>
+</div>
+<!--
+<div class="item-page-field item-page-author-field">
+  <h2 class="simple-view-element-header">{{ label | translate }}</h2>
+  <div *ngFor="let aut of item?.allMetadata(fields); index as i" class="simple-view-element">
+      <a [href]="genBrowseUri(aut.value, aut.authority)" class="dont-break-out ng-star-inserted">{{ aut.value }}</a>
+      {{hasORCID(i, aut.authority)}}
+      <a *ngIf="orcids[i]" [href]="prefix+orcids[i].orcid_id" target="_blank" [title]="'orcid['+aut.value+']:'+orcids[i].orcid_id">
+          <img [src]="img_src" [alt]="'orcid['+aut.value+']:'+orcids[i].orcid_id"/>
+      </a>
+  </div>
+</div>
+-->
+<!--
+<agm-map
+[latitude]="lat"
+[longitude]="lng"
+[zoom]="2"
+(mapClick)="addMarker($event.coords.lat, $event.coords.lng)"
+>
+<agm-marker
+  *ngFor="let marker of markers"
+  [latitude]="marker.lat"
+  [longitude]="marker.lng"
+  [opacity]="marker.alpha"
+  [markerDraggable]="true"
+  (markerClick)="selectMarker($event)"
+>
+</agm-marker>
+<agm-rectangle
+  [north]="max('lat')"
+  [east]="max('lng')"
+  [south]="min('lat')"
+  [west]="min('lng')"
+>
+</agm-rectangle>
+</agm-map>
+<p *ngIf="selectedMarker">
+Lat: {{ selectedMarker.lat }} Lng: {{ selectedMarker.lng }}
+</p>
+-->
+<!--
+<agm-map
+[latitude]="lat"
+[longitude]="lng"></agm-map>
+-->
+<!--
+<google-map 
+[latitude]="lat"
+[longitude]="lng"/>
+-->
+<!--
+<google-map></google-map>
+-->
+
+
+<!--
+<div id="map"></div>
+-->
+
+<h1>map!</h1>
+
+<!--
+<div id="map"></div>
+-->
+<!--
+<ds-map></ds-map>
+-->
+<!--
+<div style="height: 300px;" 
+leaflet 
+[leafletOptions]="options">
+</div>
+-->
+
+<div 
+leaflet 
+class="mapa" style="height: 300px;">
+</div>
+
+<!--
+<div class="map-container">
+  <div leaflet style="height: 300px;"
+       [leafletOptions]="options">
+  </div>
+</div>
+-->
+
+
+

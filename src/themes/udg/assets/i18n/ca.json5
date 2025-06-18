@@ -9,6 +9,9 @@
   "footer.link.about": "Sobre el DUGi",
   // geolocation
   "item.page.geomap": "Localització",
+  "item.page.geomap.locations": "Ubicacions",
+  "item.page.geomap.location": "Ubicació", 
+  "item.page.geomap.coordinates": "Coordenades",
 }
 
 

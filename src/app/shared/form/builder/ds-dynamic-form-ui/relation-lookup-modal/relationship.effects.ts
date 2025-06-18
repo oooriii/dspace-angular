@@ -170,13 +170,21 @@ export class RelationshipEffects {
   private addRelationship(item1: Item, item2: Item, relationshipType: string, submissionId: string, nameVariant?: string) {
     const type1: string = item1.firstMetadataValue('dspace.entity.type');
     const type2: string = item2.firstMetadataValue('dspace.entity.type');
+    
+    // Log the initial values of the variables
+    console.log('******* addRelationship called with:', { item1, item2, relationshipType, submissionId, nameVariant });
+    console.log('******* Entity types:', { type1, type2 });
+
     return this.relationshipTypeService.getRelationshipTypeByLabelAndTypes(relationshipType, type1, type2)
       .pipe(
         mergeMap((type: RelationshipType) => {
           if (type === null) {
+            console.log('******* Relationship type is null');
             return [null];
           } else {
             const isSwitched = type.rightwardType === relationshipType;
+            console.log('******* Relationship type found:', type);
+            console.log('******* Is relationship type switched:', isSwitched);
             if (isSwitched) {
               return this.relationshipService.addRelationship(type.id, item2, item1, nameVariant, undefined);
             } else {
@@ -187,6 +195,9 @@ export class RelationshipEffects {
         take(1),
         switchMap((rd: RemoteData<Relationship>) => {
           if (hasNoValue(rd) || rd.hasFailed) {
+            // Log the error details
+            console.error('******* Failed to add relationship:', rd);
+
             // An error occurred, deselect the object from the selectable list and display an error notification
             const listId = `list-${submissionId}-${relationshipType}`;
             this.selectableListService.findSelectedByCondition(listId, (object: any) => hasValue(object.indexableObject) && object.indexableObject.uuid === item2.uuid).pipe(
@@ -205,7 +216,11 @@ export class RelationshipEffects {
           }
           return this.refreshWorkspaceItemInCache(submissionId);
         }),
-      ).subscribe((submissionObject: SubmissionObject) => this.store.dispatch(new SaveSubmissionSectionFormSuccessAction(submissionId, [submissionObject], false)));
+//      ).subscribe((submissionObject: SubmissionObject) => this.store.dispatch(new SaveSubmissionSectionFormSuccessAction(submissionId, [submissionObject], false)));
+).subscribe((submissionObject: SubmissionObject) => {
+  console.log('******* Relationship added successfully, submission object:', submissionObject);
+  this.store.dispatch(new SaveSubmissionSectionFormSuccessAction(submissionId, [submissionObject], false));
+});
   }
 
   private removeRelationship(item1: Item, item2: Item, relationshipType: string, submissionId: string) {

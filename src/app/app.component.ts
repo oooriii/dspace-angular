@@ -115,10 +115,12 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.router.events.subscribe((event) => {
+      /*
       // oriol
       console.log('event', event);
       console.log('***************************\n***************************\n***************************\n');
-
+      */
+     
       if (event instanceof NavigationStart) {
         distinctNext(this.isRouteLoading$, true);
       } else if (

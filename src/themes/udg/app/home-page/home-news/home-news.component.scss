@@ -5,6 +5,9 @@
     div.background-image-container {
       color: white;
       position: relative;
+      background-repeat: no-repeat; /* Prevents the image from repeating */
+      background-size: cover; /* Ensures the image covers the entire container */
+      background-position: center; /* Centers the image within the container */
   
       .background-image > img {
         background-color: var(--bs-info);
@@ -59,7 +62,21 @@
     }
   
     .jumbotron {
-      background-color: transparent;
+      background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black background for contrast */
+      padding: 20px; /* Add some padding for better appearance */
+      //border-radius: 8px; /* Optional: Add rounded corners for a softer look */
+      padding-top: 150px;
+      height: 400px;
+      div {
+        display: flex; /* Use Flexbox for alignment */
+        flex-direction: column; /* Align items vertically */
+        justify-content: flex-end; /* Align items to the bottom */
+        text-align: bottom; /* Align text to the bottom */
+        h1 {
+          font-size: 40px;
+          margin-bottom: 20px; /* Add some space between the title and the description */
+        }
+      }
     }
   
     a {

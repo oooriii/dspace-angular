@@ -1,105 +1,45 @@
-<!--
-<div *ngIf="item?.firstMetadataValue(fields)" class="item-page-field-orcid">
-  <a class="item-page-field-orcid" [href]="prefix + '/' + item?.firstMetadataValue(fields)" target="_blank" [title]="'ORCID ' + author + ' : ' + item?.firstMetadataValue(fields)"><img [src]="img_src" [alt]="'ORCID ' + author + ' : ' +  item?.firstMetadataValue(fields)"/></a>
-</div>
--->
-<div *ngIf="item?.firstMetadataValue(fields)" class="item-page-field">
+<div *ngIf="hasValidCoordinates" class="item-page-field item-page-geo-map-field">
   <h2 class="simple-view-element-header">{{ label | translate }}</h2>
-  <!--
-  <div *ngFor="let geo of item?.allMetadata(fields); index as i" class="simple-view-element">
-    {{ geo.value }}
-  </div>
-  -->
-  <pre>
-    {{ geoData | json }}
-  </pre>
-</div>
-<!--
-<div class="item-page-field item-page-author-field">
-  <h2 class="simple-view-element-header">{{ label | translate }}</h2>
-  <div *ngFor="let aut of item?.allMetadata(fields); index as i" class="simple-view-element">
-      <a [href]="genBrowseUri(aut.value, aut.authority)" class="dont-break-out ng-star-inserted">{{ aut.value }}</a>
-      {{hasORCID(i, aut.authority)}}
-      <a *ngIf="orcids[i]" [href]="prefix+orcids[i].orcid_id" target="_blank" [title]="'orcid['+aut.value+']:'+orcids[i].orcid_id">
-          <img [src]="img_src" [alt]="'orcid['+aut.value+']:'+orcids[i].orcid_id"/>
-      </a>
-  </div>
-</div>
--->
-<!--
-<agm-map
-[latitude]="lat"
-[longitude]="lng"
-[zoom]="2"
-(mapClick)="addMarker($event.coords.lat, $event.coords.lng)"
->
-<agm-marker
-  *ngFor="let marker of markers"
-  [latitude]="marker.lat"
-  [longitude]="marker.lng"
-  [opacity]="marker.alpha"
-  [markerDraggable]="true"
-  (markerClick)="selectMarker($event)"
->
-</agm-marker>
-<agm-rectangle
-  [north]="max('lat')"
-  [east]="max('lng')"
-  [south]="min('lat')"
-  [west]="min('lng')"
->
-</agm-rectangle>
-</agm-map>
-<p *ngIf="selectedMarker">
-Lat: {{ selectedMarker.lat }} Lng: {{ selectedMarker.lng }}
-</p>
--->
-<!--
-<agm-map
-[latitude]="lat"
-[longitude]="lng"></agm-map>
--->
-<!--
-<google-map 
-[latitude]="lat"
-[longitude]="lng"/>
--->
-<!--
-<google-map></google-map>
--->
-
-
-<!--
-<div id="map"></div>
--->
-
-<h1>map!</h1>
-
-<!--
-<div id="map"></div>
--->
-<!--
-<ds-map></ds-map>
--->
-<!--
-<div style="height: 300px;" 
-leaflet 
-[leafletOptions]="options">
-</div>
--->
-
-<div 
-leaflet 
-class="mapa" style="height: 300px;">
-</div>
-
-<!--
-<div class="map-container">
-  <div leaflet style="height: 300px;"
-       [leafletOptions]="options">
+  
+  <div class="geomap-container">
+    <!-- Map display -->
+    <div id="geomap" 
+         class="geomap" 
+         style="height: 400px; width: 100%; border-radius: 8px; border: 1px solid #dee2e6;">
+    </div>
+    
+    <!-- Location information -->
+    <div *ngIf="geoData.length > 0" class="geomap-info mt-3">
+      <div class="row">
+        <div class="col-12">
+          <h6 class="mb-2">{{ 'item.page.geomap.locations' | translate }}:</h6>
+          <div *ngFor="let location of geoData; let i = index" class="geomap-location-item mb-2">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-map-marker-alt text-primary me-2"></i>
+              <div>
+                <strong *ngIf="location.label">{{ location.label }}</strong>
+                <span *ngIf="!location.label">{{ 'item.page.geomap.location' | translate }} {{ i + 1 }}</span>
+                <br>
+                <small class="text-muted">
+                  {{ 'item.page.geomap.coordinates' | translate }}: 
+                  {{ location.latitude | number:'1.6-6' }}, {{ location.longitude | number:'1.6-6' }}
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<!-- Debug information (only in development) -->
+<!-- 
+<div *ngIf="!hasValidCoordinates && item?.firstMetadataValue(fields)" class="alert alert-warning mt-2">
+  <small>
+    <strong>Debug:</strong> Invalid geolocation data found: "{{ item?.firstMetadataValue(fields) }}"
+    <br>
+    Expected format: "latitude,longitude" or "Label: latitude,longitude"
+  </small>
+</div>
 -->
-
-
-

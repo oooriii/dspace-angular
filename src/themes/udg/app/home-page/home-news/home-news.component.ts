@@ -13,11 +13,21 @@ import { HomeNewsComponent as BaseComponent } from '../../../../../app/home-page
  * Component to render the news section on the home page
  */
 export class HomeNewsComponent implements OnInit {
+  /*
   images: string[] = [
     '/assets/udg/images/banner/claustre_udg.jpg',
     '/assets/udg/images/banner/dret.jpg',
     '/assets/udg/images/banner/girona.jpg',
     '/assets/udg/images/banner/lletres.jpg'
+  ];
+  */
+  images: string[] = [
+    '/assets/udg/images/banner/girona_1.jpg',
+    '/assets/udg/images/banner/girona_2.jpg',
+    '/assets/udg/images/banner/girona_3.jpg',
+    '/assets/udg/images/banner/girona_4.jpg',
+    '/assets/udg/images/banner/b_bvell.jpg',
+    '/assets/udg/images/banner/b_montilivi.jpg'
   ];
   selectedImage: string;
 

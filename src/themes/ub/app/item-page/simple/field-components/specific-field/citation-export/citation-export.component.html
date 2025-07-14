@@ -22,6 +22,14 @@
     <div class="citation-export-actions">
       <button 
         type="button" 
+        class="btn btn-outline-primary btn-sm"
+        (click)="copyToClipboard()"
+        [title]="'citation-export.copy.tooltip' | translate">
+        <i class="fas fa-copy" aria-hidden="true"></i>
+        {{ 'citation-export.copy.label' | translate }}
+      </button>
+      <button 
+        type="button" 
         class="btn btn-primary btn-sm"
         (click)="downloadCitation()"
         [title]="'citation-export.download.tooltip' | translate">

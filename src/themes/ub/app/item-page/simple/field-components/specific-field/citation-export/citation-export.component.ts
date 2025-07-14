@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Clipboard } from '@angular/cdk/clipboard';
 import { Item } from '../../../../../../../../app/core/shared/item.model';
 
 export interface CitationFormat {
@@ -14,6 +15,8 @@ export interface CitationFormat {
 export class CitationExportComponent implements OnInit {
 
   @Input() item: Item;
+
+  constructor(private clipboard: Clipboard) {}
 
   selectedFormat = 'apa';
 
@@ -44,6 +47,19 @@ export class CitationExportComponent implements OnInit {
 
   getCitationPreview(): string {
     return this.generateCitation(this.selectedFormat);
+  }
+
+  copyToClipboard(): void {
+    const citation = this.generateCitation(this.selectedFormat);
+    const successful = this.clipboard.copy(citation);
+    
+    if (successful) {
+      // TODO: Add success notification
+      console.log('Citation copied to clipboard');
+    } else {
+      // TODO: Add error notification
+      console.error('Failed to copy citation to clipboard');
+    }
   }
 
   private generateCitation(format: string): string {

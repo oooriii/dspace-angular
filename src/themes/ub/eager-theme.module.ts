@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 import { SharedModule } from '../../app/shared/shared.module';
 import { HomeNewsComponent } from './app/home-page/home-news/home-news.component';
 import { NavbarComponent } from './app/navbar/navbar.component';
@@ -115,6 +116,7 @@ CitationExportComponent,
   imports: [
     CommonModule,
     FormsModule,
+    ClipboardModule,
     SharedModule,
     RootModule,
     NavbarModule,

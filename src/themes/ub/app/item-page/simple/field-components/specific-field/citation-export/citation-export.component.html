@@ -1,9 +1,16 @@
 <div class="citation-export-container">
-  <div class="citation-export-header">
+  <div class="citation-export-header" (click)="toggleExpanded()">
     <h5>{{ 'citation-export.title' | translate }}</h5>
+    <i 
+      class="fas" 
+      [class.fa-chevron-down]="!isExpanded" 
+      [class.fa-chevron-up]="isExpanded"
+      aria-hidden="true">
+    </i>
   </div>
   
-  <div class="citation-export-form">
+  <div class="citation-export-content" *ngIf="isExpanded">
+    <div class="citation-export-form">
     <div class="form-group">
       <label for="citationFormat" class="form-label">
         {{ 'citation-export.format.label' | translate }}
@@ -22,7 +29,7 @@
     <div class="citation-export-actions">
       <button 
         type="button" 
-        class="btn btn-outline-primary btn-sm"
+        class="btn btn-primary btn-sm"
         (click)="copyToClipboard()"
         [title]="'citation-export.copy.tooltip' | translate">
         <i class="fas fa-copy" aria-hidden="true"></i>
@@ -44,5 +51,6 @@
     <div class="citation-preview-content">
       <pre>{{ getCitationPreview() }}</pre>
     </div>
+  </div>
   </div>
 </div>

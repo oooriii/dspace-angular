@@ -19,6 +19,7 @@ export class CitationExportComponent implements OnInit {
   constructor(private clipboard: Clipboard) {}
 
   selectedFormat = 'apa';
+  isExpanded = false;
 
   citationFormats: CitationFormat[] = [
     { value: 'apa', label: 'APA' },
@@ -32,6 +33,10 @@ export class CitationExportComponent implements OnInit {
 
   ngOnInit(): void {
     // Component initialization
+  }
+
+  toggleExpanded(): void {
+    this.isExpanded = !this.isExpanded;
   }
 
   onFormatChange(format: string): void {

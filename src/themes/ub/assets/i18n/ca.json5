@@ -17,6 +17,13 @@
   // footer
   "footer.lv1.coordinacio": "Coordinació: ",
   "footer.lv1.avis": "Avís legal",
+
+  // Citation Export Component
+  "citation-export.title": "Exportar Citació",
+  "citation-export.format.label": "Format de Citació",
+  "citation-export.download.label": "Descarregar Citació",
+  "citation-export.download.tooltip": "Descarregar citació en el format seleccionat",
+  "citation-export.preview.title": "Vista Prèvia",
 }
 
 

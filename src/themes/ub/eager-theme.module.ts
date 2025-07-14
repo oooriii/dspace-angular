@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../../app/shared/shared.module';
 import { HomeNewsComponent } from './app/home-page/home-news/home-news.component';
 import { NavbarComponent } from './app/navbar/navbar.component';
@@ -63,6 +64,7 @@ import { LangSwitchComponent } from './app/shared/lang-switch/lang-switch.compon
 // oriol - 20240426 - intentant crear nou component
 import { ItemPageOrcidFieldComponent } from './app/item-page/simple/field-components/specific-field/orcid/item-page-orcid-field.component';
 import { ItemPageAuthorFieldComponent } from './app/item-page/simple/field-components/specific-field/author/item-page-author-field.component';
+import { CitationExportComponent } from './app/item-page/simple/field-components/specific-field/citation-export/citation-export.component';
 
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
@@ -106,11 +108,13 @@ const DECLARATIONS = [
 // oriol - 20240426 - intentant crear nou component
 ItemPageOrcidFieldComponent,
 ItemPageAuthorFieldComponent,
+CitationExportComponent,
 ];
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     SharedModule,
     RootModule,
     NavbarModule,

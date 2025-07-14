@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Item } from '../../../../../../../../app/core/shared/item.model';
 import { ItemPageFieldComponent } from '../../../../../../../../app/item-page/simple/field-components/specific-field/item-page-field.component';
@@ -112,7 +112,7 @@ export class ItemPageAuthorFieldComponent extends ItemPageFieldComponent {
  }
 
 
- 
+
 
 
 }

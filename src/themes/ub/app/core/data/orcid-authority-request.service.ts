@@ -1,6 +1,5 @@
 /* eslint-disable max-classes-per-file */
 import { Inject, Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 
 
@@ -14,7 +13,6 @@ import { OrcidData } from './orcid-data';
 import { APP_CONFIG, AppConfig } from '../../../../../config/app-config.interface';
 import { DspaceRestService } from '../../../../../../src/app/core/dspace-rest/dspace-rest.service';
 import { RawRestResponse } from 'src/app/core/dspace-rest/raw-rest-response.model';
-import { SignpostingLink } from 'src/app/core/data/signposting-links.model';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -30,7 +28,7 @@ export class OrcidAuthorityRequestService {
 
   constructor(@Inject(APP_CONFIG) protected appConfig: AppConfig, private restService: DspaceRestService) {
   }
-  
+
   /* GET heroes whose name contains search term */
   getOrcid(authorityId: string): Observable<OrcidData> {
     authorityId = authorityId.trim();

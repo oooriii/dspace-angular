@@ -15,7 +15,14 @@
   "home.news.text": "El dipòsit",
   "menu.header.image.ublogo": "Universitat de Barcelona",
 
-    // footer
+  // footer
   "footer.lv1.coordinacio": "Coordinació: ",
   "footer.lv1.avis": "Avís legal",
+
+  // Citation Export Component
+  "citation-export.title": "Export Citation",
+  "citation-export.format.label": "Citation Format",
+  "citation-export.download.label": "Download Citation",
+  "citation-export.download.tooltip": "Download citation in the selected format",
+  "citation-export.preview.title": "Preview",
 }

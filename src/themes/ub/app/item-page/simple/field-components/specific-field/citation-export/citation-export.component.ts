@@ -12,6 +12,11 @@ export interface CitationFormat {
   templateUrl: './citation-export.component.html',
   styleUrls: ['./citation-export.component.scss']
 })
+
+/**
+ * Component to export the citation of an item in different formats
+ * Oriol Olivé
+ */
 export class CitationExportComponent implements OnInit {
 
   @Input() item: Item;
@@ -22,6 +27,7 @@ export class CitationExportComponent implements OnInit {
   isExpanded = false;
 
   citationFormats: CitationFormat[] = [
+    { value: 'iso690', label: 'ISO 690' },
     { value: 'apa', label: 'APA' },
     { value: 'mla', label: 'MLA' },
     { value: 'chicago', label: 'Chicago' },
@@ -35,14 +41,23 @@ export class CitationExportComponent implements OnInit {
     // Component initialization
   }
 
+  /**
+   * Toggle the expanded state of the citation export
+   */
   toggleExpanded(): void {
     this.isExpanded = !this.isExpanded;
   }
 
+  /**
+   * Change the selected format
+   */
   onFormatChange(format: string): void {
     this.selectedFormat = format;
   }
 
+  /**
+   * Download the citation in the selected format
+   */
   downloadCitation(): void {
     const citation = this.generateCitation(this.selectedFormat);
     const filename = this.getFilename(this.selectedFormat);
@@ -50,10 +65,16 @@ export class CitationExportComponent implements OnInit {
     this.downloadFile(citation, filename);
   }
 
+  /**
+   * Get the citation preview in the selected format
+   */
   getCitationPreview(): string {
     return this.generateCitation(this.selectedFormat);
   }
 
+  /**
+   * Copy the citation to the clipboard
+   */
   copyToClipboard(): void {
     const citation = this.generateCitation(this.selectedFormat);
     const successful = this.clipboard.copy(citation);
@@ -66,9 +87,13 @@ export class CitationExportComponent implements OnInit {
       console.error('Failed to copy citation to clipboard');
     }
   }
-
+  /**
+   * Generate the citation in the selected format
+   */
   private generateCitation(format: string): string {
     switch (format) {
+      case 'iso690':
+        return this.generateISO690();
       case 'apa':
         return this.generateAPA();
       case 'mla':
@@ -86,6 +111,11 @@ export class CitationExportComponent implements OnInit {
       default:
         return this.generateAPA();
     }
+  }
+
+  private generateISO690(): string {
+    // TODO: Implement ISO 690 citation generation
+    return 'ISO 690';
   }
 
   private generateAPA(): string {

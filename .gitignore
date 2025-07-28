@@ -41,3 +41,8 @@ package-lock.json
 junit.xml
 
 /src/mirador-viewer/config.local.js
+
+
+# ignore
+.cursorrules
+CLAUDE.md

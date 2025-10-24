@@ -5226,7 +5226,7 @@
 
   "access-control-option-end-date-note": "Escoja la fecha hasta la cuál se aplicarán las condiciones de acceso especificadas",
 
-  //"browse.search-form.placeholder": "Search the repository",
+  "browse.search-form.placeholder": "Search the repository",
   "browse.search-form.placeholder": "Buscar en el repositorio",
   "info.about.title": "Sobre el DUGi",
 

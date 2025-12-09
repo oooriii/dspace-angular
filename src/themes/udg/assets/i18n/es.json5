@@ -1,0 +1,17 @@
+
+{
+  // DSpace default: "All of DSpace"
+  "menu.section.browse_global": "Navega por el DUGi",
+
+  // DSpace default: "DSpace Angular :: "
+  "repository.title.prefix": "DSpace :: ",
+  "info.about.title": "Sobre el DUGi",
+  "footer.link.about": "Sobre el DUGi",
+  // geolocation
+  "item.page.geomap": "Localización",
+  "item.page.geomap.locations": "Ubicaciones",
+  "item.page.geomap.location": "Ubicación",
+  "item.page.geomap.coordinates": "Coordenadas",
+}
+
+

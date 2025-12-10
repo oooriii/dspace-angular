@@ -1,2 +1,5 @@
 config.*.yml
 !config.example.yml
+
+.cursorrules
+CLAUDE.md
